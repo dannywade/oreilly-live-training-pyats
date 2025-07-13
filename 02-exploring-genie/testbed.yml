@@ -7,7 +7,7 @@ testbed:
 
 # Devices in testbed
 devices:
-  cat8000v:
+  Cat8K:
     alias: uut
     os: iosxe
     connections:

@@ -75,7 +75,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
         "type_of_disk": "virtual hard disk"
       }
     },
-    "hostname": "ROHIT",
+    "hostname": "cat8000v",
     "image_id": "X86_64_LINUX_IOSD-UNIVERSALK9-M",
     "image_type": "production image",
     "label": "RELEASE SOFTWARE (fc4)",
@@ -1070,4 +1070,73 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 +   port_channel_member: False
 +  switchport_enable: False
 +  type: Loopback
+```
+
+# pyATS Blitz
+
+The Blitz YAML file provides a simple example of configuring a loopback interface and verifying it's up. To execute the Blitz YAML file, run the following command:
+
+```
+pyats run genie --trigger-datafile blitz.yml --trigger-uids 'TestLoopbackInterface' --testbed-file testbed.yml
+```
+
+You must specify the testcase UID of the tests you want to execute. Fortunately, we only have one testcase in `blitz.yml` (`TestLoopbackInterface`).
+
+## Blitz Results
+
+Here's a quick look at what the test results should look like:
+
+```
+2025-07-13T02:44:45: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2025-07-13T02:44:45: %EASYPY-INFO: |                             Task Result Summary                              |
+2025-07-13T02:44:45: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2025-07-13T02:44:45: %EASYPY-INFO: Task-1: genie_testscript                                                  FAILED
+2025-07-13T02:44:45: %EASYPY-INFO: Task-1: genie_testscript.common_setup                                     PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: Task-1: genie_testscript.TestLoopbackInterface.uut                        PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: Task-1: genie_testscript.common_cleanup                                   FAILED
+2025-07-13T02:44:45: %EASYPY-INFO: 
+2025-07-13T02:44:45: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2025-07-13T02:44:45: %EASYPY-INFO: |                             Task Result Details                              |
+2025-07-13T02:44:45: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2025-07-13T02:44:45: %EASYPY-INFO: Task-1: genie_testscript                                                  FAILED
+2025-07-13T02:44:45: %EASYPY-INFO: |-- common_setup                                                          PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- connect                                                           PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- configure                                                        SKIPPED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- configuration_snapshot                                            PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- save_bootvar                                                      PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- learn_system_defaults                                             PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- initialize_traffic                                               SKIPPED
+2025-07-13T02:44:45: %EASYPY-INFO: |   `-- PostProcessor-1                                                   PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |-- TestLoopbackInterface.uut                                             PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |-- apply_configuration                                               PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1: Starting action configure on device 'Cat8K'           PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1.1: Configuring 'Cat8K'                                 PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |   `-- STEP 2: Starting action sleep                                 PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   `-- verify_configuration                                              PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1: Starting action execute on device 'Cat8K'             PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1: Executing 'show ip interface brief' on 'Cat8K'      PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1.1: Verify that 'Loopback150' is included in th...    PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2: Starting action parse on device 'Cat8K'               PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2.1: Parsing 'show interfaces loopback150' on 'Cat8K'    PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       `-- STEP 2.1.1: Verify that 'contains_key_value('oper_statu...    PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: `-- common_cleanup                                                        FAILED
+2025-07-13T02:44:45: %EASYPY-INFO:     |-- verify_configuration_snapshot                                     FAILED
+2025-07-13T02:44:45: %EASYPY-INFO:     |-- stop_traffic                                                     SKIPPED
+2025-07-13T02:44:45: %EASYPY-INFO:     `-- PostProcessor-1                                                   PASSED
+```
+
+You'll notice the `common_cleanup` section failed. More specifically, you'll see the `verify_configuration_snapshot` test failed. That's due to the fact we configured a loopback interface during testing, but did not remove it. The `verify_configuration_snapshot` compares the device configuration snapshots captured during the `common_setup` and `common_cleanup` test sections to ensure the configuration is identical before and after testing.
+
+```
+2025-07-13T02:44:44: %GENIE-INFO:  | Check Post configuration Summary                                                                                                                   |
+2025-07-13T02:44:44: %GENIE-INFO:  +====================================================================================================================================================+
+2025-07-13T02:44:44: %GENIE-INFO:  | * Summary for device: Cat8K                                                                                                                        |
+2025-07-13T02:44:44: %GENIE-ERROR: |     - Comparison between original configuration taken at common setup and the one taken at common cleanup is different as per the following diffs: |
+2025-07-13T02:44:44: %GENIE-ERROR: | +interface Loopback150                                                                                                                             |
+2025-07-13T02:44:44: %GENIE-ERROR: | + description Configured by Genie Blitz                                                                                                            |
+2025-07-13T02:44:44: %GENIE-ERROR: | + no ip address                                                                                                                                    |
+2025-07-13T02:44:44: %GENIE-INFO:  |****************************************************************************************************************************************************|
+2025-07-13T02:44:44: %GENIE-INFO: 
+
+2025-07-13T02:44:44: %AETEST-ERROR: Failed reason: Comparison of Configuration in Common Setup and Common Cleanup has been modified.  Check the summary table for more details
 ```

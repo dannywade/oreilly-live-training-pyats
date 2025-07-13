@@ -14,6 +14,3 @@ def main(runtime):
 
     # Run the test script with the loaded testbed
     run(testscript="basic_testscript.py", runtime=runtime, testbed=tb, datafile="datafile.yml")
-
-    # To run job:
-    # pyats run job basic_jobfile.py

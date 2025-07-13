@@ -1,3 +1,4 @@
+from genie.utils import Dq
 from pyats import aetest
 import logging
 
@@ -72,7 +73,6 @@ class CommonCleanup(aetest.CommonCleanup):
 if __name__ == "__main__":
     from pyats.topology import loader
     from dotenv import load_dotenv
-    from genie.utils import Dq
 
     # Load environment variables
     load_dotenv()
@@ -82,6 +82,3 @@ if __name__ == "__main__":
 
     # and pass all arguments to aetest.main() as kwargs
     aetest.main(testbed=tb, datafile="datafile.yml")
-
-    # To run standalone execution:
-    # python bgp_testscript.py

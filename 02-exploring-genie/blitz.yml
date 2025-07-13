@@ -6,14 +6,14 @@ TestLoopbackInterface:
       class: triggers.blitz.blitz.Blitz
 
     # Devices to run on - Default is cat8000v
-    devices: ['cat8000v']
+    devices: ['uut']
 
 
     test_sections:
 
         - apply_configuration:
             - configure:
-                device: cat8000v
+                device: uut
                 command: |
                   interface loopback150
                   description Configured by Genie Blitz
@@ -23,14 +23,14 @@ TestLoopbackInterface:
         - verify_configuration:
             # Confirm Loopback150 is configured
             - execute:
-                device: cat8000v
+                device: uut
                 command: show ip interface brief
                 include:
                     # Verify Shutdown is within the show run output
                   - 'Loopback150'
             # Validate Loopback150 is up
             - parse:
-                device: cat8000v
+                device: uut
                 # All action supports banner field to add to the log
                 banner: Verify interface loopback150 is up
                 command: show interfaces loopback150
