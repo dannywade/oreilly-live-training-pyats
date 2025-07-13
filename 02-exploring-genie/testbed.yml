@@ -1,0 +1,16 @@
+testbed:
+  # Default credentials for all devices in testbed
+  credentials:
+    default:
+      username: '%ENV{SSH_USER}'
+      password: '%ENV{SSH_PASSWORD}'
+
+# Devices in testbed
+devices:
+  cat8000v:
+    alias: uut
+    os: iosxe
+    connections:
+      cli:
+        protocol: ssh
+        ip: '%ENV{DEVICE_IP}'

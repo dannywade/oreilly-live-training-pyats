@@ -1,0 +1,38 @@
+# Name of the testcase
+TestLoopbackInterface:
+    # Location of the blitz trigger - always this same location for all blitz trigger
+    source:
+      pkg: genie.libs.sdk
+      class: triggers.blitz.blitz.Blitz
+
+    # Devices to run on - Default is cat8000v
+    devices: ['cat8000v']
+
+
+    test_sections:
+
+        - apply_configuration:
+            - configure:
+                device: cat8000v
+                command: |
+                  interface loopback150
+                  description Configured by Genie Blitz
+            - sleep:
+                sleep_time: 3
+
+        - verify_configuration:
+            # Confirm Loopback150 is configured
+            - execute:
+                device: cat8000v
+                command: show ip interface brief
+                include:
+                    # Verify Shutdown is within the show run output
+                  - 'Loopback150'
+            # Validate Loopback150 is up
+            - parse:
+                device: cat8000v
+                # All action supports banner field to add to the log
+                banner: Verify interface loopback150 is up
+                command: show interfaces loopback150
+                include:
+                  - contains_key_value('oper_status', 'up')

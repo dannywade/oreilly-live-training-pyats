@@ -1,0 +1,92 @@
++++ cat8000v with via 'cli': executing command 'show ip ospf' +++
+show ip ospf
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip protocols' +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf mpls ldp interface' +++
+show ip ospf mpls ldp interface
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf mpls traffic-eng link' +++
+show ip ospf mpls traffic-eng link
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf database router' +++
+show ip ospf database router
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf database network' +++
+show ip ospf database network
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf database external' +++
+show ip ospf database external
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf database summary' +++
+show ip ospf database summary
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf database opaque-area' +++
+show ip ospf database opaque-area
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf virtual-links' +++
+show ip ospf virtual-links
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf interface' +++
+show ip ospf interface
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf neighbor detail' +++
+show ip ospf neighbor detail
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip ospf sham-links' +++
+show ip ospf sham-links
+cat8000v#
+abase.ShowIpOspfDatabaseSummary'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf database summary
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseOpaqueArea'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf database opaque-area
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfVirtualLinks'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf virtual-links
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfInterface'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf interface 
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfNeighborDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf neighbor detail
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Show Command: show ip ospf sham-links
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ospf'                                                                                                               |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_protocols.ShowIpProtocols'>, arguments: {'vrf':''}                                                     |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspf'>                                                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsLdpInterface'>, arguments: {'interface':''}                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsTrafficEngLink'>                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseRouter'>                                                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseNetwork'>                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseExternal'>                                                             |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseSummary'>                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseOpaqueArea'>                                                           |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfVirtualLinks'>                                                                          |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfInterface'>, arguments: {'interface':''}                                                |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfNeighborDetail'>, arguments: {'neighbor':''}                                            |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'>                                                                             |
+|====================================================================================================================================================|

@@ -1,0 +1,8 @@
+Issue while building the feature
+
+Traceback (most recent call last):
+  File "src/genie/cli/commands/learn.py", line 365, in genie.cli.commands.learn.LearnCommand._retrieve_ops
+  File "/Users/dan/code/oreilly-live-training-pyats/venv/lib/python3.12/site-packages/genie/libs/ops/management/iosxe/management.py", line 179, in learn
+    next_hop = self.info["management"]["ipv4_gateway"]
+               ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'ipv4_gateway'

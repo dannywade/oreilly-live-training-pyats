@@ -1,0 +1,19 @@
++++ cat8000v with via 'cli': executing command 'show standby all' +++
+show standby all
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show standby delay' +++
+show standby delay
+Interface          Minimum Reload 
+cat8000v#
+x10f48ef00>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x10f48ef00>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Hsrp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyAll'>                                                                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'>                                                                             |
+|====================================================================================================================================================|

@@ -1,0 +1,31 @@
++++ cat8000v with via 'cli': executing command 'show ntp associations' +++
+show ntp associations
+
+  address         ref clock       st   when   poll reach  delay  offset   disp
+ ~192.168.100.1   .TIME.          16      -     64     0  0.000   0.000 16000.
+ * sys.peer, # selected, + candidate, - outlyer, x falseticker, ~ configured
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ntp status' +++
+show ntp status
+Clock is unsynchronized, stratum 16, no reference clock
+nominal freq is 250.0000 Hz, actual freq is 250.0000 Hz, precision is 2**10
+ntp uptime is 2796100 (1/100 of seconds), resolution is 4000
+reference time is 00000000.00000000 (00:00:00.000 UTC Mon Jan 1 1900)
+clock offset is 0.0000 msec, root delay is 0.00 msec
+root dispersion is 419.42 msec, peer dispersion is 0.00 msec
+loopfilter state is 'FSET' (Drift set from file), drift is 0.000000000 s/s
+system poll interval is 8, never updated.
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ntp config' +++
+show ntp config
+ ntp server 192.168.100.1
+cat8000v#
++====================================================================================================================================================+
+| Commands for learning feature 'Ntp'                                                                                                                |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpAssociations'>                                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpStatus'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpConfig'>                                                                                    |
+|====================================================================================================================================================|

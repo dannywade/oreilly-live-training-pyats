@@ -1,0 +1,56 @@
++++ cat8000v with via 'cli': executing command 'show lisp all service ipv4' +++
+show lisp all service ipv4
+show lisp all service ipv4
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lisp all service ipv4 summary' +++
+show lisp all service ipv4 summary
+show lisp all service ipv4 summary
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lisp all service ipv6 summary' +++
+show lisp all service ipv6 summary
+show lisp all service ipv6 summary
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lisp all service ipv6' +++
+show lisp all service ipv6
+show lisp all service ipv6
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lisp all service ethernet summary' +++
+show lisp all service ethernet summary
+show lisp all service ethernet summary
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lisp all service ethernet' +++
+show lisp all service ethernet
+show lisp all service ethernet
+       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
+Could not learn <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispService'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x115a212e0>
+Invalid command has been executed
++====================================================================================================================================================+
+| Commands for learning feature 'Lisp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands not accepted on the device                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispService'>, arguments: {'service':'ipv4'}                                          |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispServiceSummary'>, arguments: {'service':'ipv4'}                                   |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispServiceSummary'>, arguments: {'service':'ipv6'}                                   |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispService'>, arguments: {'service':'ipv6'}                                          |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispServiceSummary'>, arguments: {'service':'ethernet'}                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lisp_service.ShowLispService'>, arguments: {'service':'ethernet'}                                      |
+|====================================================================================================================================================|

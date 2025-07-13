@@ -1,0 +1,28 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "baud_rate": {
+      "rx": 9600,
+      "tx": 9600
+    },
+    "input_transport": [
+      "ssh"
+    ],
+    "length": 0,
+    "line": "437",
+    "location": "",
+    "output_transport": [
+      "pad",
+      "telnet",
+      "rlogin",
+      "ssh"
+    ],
+    "type": "xterm-256color",
+    "width": 0
+  },
+  "raw_data": false
+}

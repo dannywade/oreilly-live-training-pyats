@@ -1,0 +1,13 @@
+# testscript parameters 
+parameters:
+    expected_os_version: 17.3.1
+ 
+testcases: 
+    BasicTestcase: 
+        # testcase uid
+        uid: Basic_TC
+
+        # testcase parameters
+        parameters: 
+            expected_os_version: 17.7.1 # Overrides the testscript parameter
+            expected_routes: ["10.10.20.0/24", "10.2.1.0/24"]

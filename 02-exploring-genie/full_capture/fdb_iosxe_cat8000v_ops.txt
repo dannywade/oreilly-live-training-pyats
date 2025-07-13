@@ -1,0 +1,12 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "mac_aging_time": 300,
+    "total_mac_addresses": 20
+  },
+  "raw_data": false
+}

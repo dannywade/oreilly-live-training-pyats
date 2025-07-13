@@ -1,0 +1,101 @@
++++ cat8000v with via 'cli': executing command 'show vrf detail' +++
+show vrf detail
+VRF Mgmt-vrf (VRF Id = 9); default RD <not set>; default VPNID <not set>
+  New CLI format, supports multiple address-families
+  Flags: 0x1808
+  No interfaces
+Address family ipv4 unicast (Table ID = 0x9):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv6 unicast (Table ID = 0x1E000001):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv4 multicast not active
+Address family ipv6 multicast not active
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip route vrf Mgmt-vrf' +++
+show ip route vrf Mgmt-vrf
+
+Routing Table: Mgmt-vrf
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, m - OMP
+       n - NAT, Ni - NAT inside, No - NAT outside, Nd - NAT DIA
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       H - NHRP, G - NHRP registered, g - NHRP registration summary
+       o - ODR, P - periodic downloaded static route, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+       & - replicated local route overrides by connected
+
+Gateway of last resort is not set
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip route' +++
+show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, m - OMP
+       n - NAT, Ni - NAT inside, No - NAT outside, Nd - NAT DIA
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       H - NHRP, G - NHRP registered, g - NHRP registration summary
+       o - ODR, P - periodic downloaded static route, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+       & - replicated local route overrides by connected
+
+Gateway of last resort is 10.10.20.254 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 10.10.20.254, GigabitEthernet1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.10.20.0/24 is directly connected, GigabitEthernet1
+L        10.10.20.148/32 is directly connected, GigabitEthernet1
+      192.0.22.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.0.22.0/24 is directly connected, Loopback123
+L        192.0.22.1/32 is directly connected, Loopback123
+      192.168.55.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.55.0/24 is directly connected, Loopback55
+L        192.168.55.1/32 is directly connected, Loopback55
+      192.168.100.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.100.0/24 is directly connected, Loopback100
+L        192.168.100.1/32 is directly connected, Loopback100
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ipv6 route' +++
+show ipv6 route
+IPv6 Routing Table - default - 1 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, R - RIP, H - NHRP, I1 - ISIS L1
+       I2 - ISIS L2, IA - ISIS interarea, IS - ISIS summary, D - EIGRP
+       EX - EIGRP external, O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1
+       OE2 - OSPF ext 2, ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2
+       a - Application, m - OMP
+L   FF00::/8 [0/0]
+     via Null0, receive
+cat8000v#
++====================================================================================================================================================+
+| Commands for learning feature 'Routing'                                                                                                            |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_vrf.ShowVrfDetail'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_routing.ShowIpRouteDistributor'>, arguments: {'vrf':'Mgmt-vrf'}                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_routing.ShowIpRouteDistributor'>, arguments: {'vrf':''}                                                |
+|   cmd: <class 'genie.libs.parser.iosxe.show_routing.ShowIpv6RouteDistributor'>, arguments: {'vrf':''}                                              |
+|====================================================================================================================================================|

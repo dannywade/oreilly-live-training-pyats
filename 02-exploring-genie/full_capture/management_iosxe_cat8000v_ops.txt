@@ -1,0 +1,26 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "management": {
+      "vrf": "Mgmt-vrf"
+    },
+    "vrf": {
+      "Mgmt-vrf": {
+        "networks": {
+          "connected": 0,
+          "total": 0
+        },
+        "protocols": [
+          "ipv4",
+          "ipv6"
+        ],
+        "route_distinguisher": "<not set>"
+      }
+    }
+  },
+  "raw_data": false
+}
