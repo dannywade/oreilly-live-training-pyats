@@ -27,6 +27,7 @@ genie.libs.health==25.5
 genie.libs.ops==25.5
 genie.libs.parser==25.5
 genie.libs.sdk==25.5
+genie.telemetry==25.5
 gitdb==4.0.12
 GitPython==3.1.44
 grpcio==1.73.1
