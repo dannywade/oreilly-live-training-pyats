@@ -29,7 +29,7 @@ Standalone execution is only recommended for quick iteration when developing tes
 
 Execute the script with the following command:
 ```
-python bgp_testscript.py
+python basic_testscript.py
 ```
 
 You'll notice all the test logs and results are printed directly to the terminal via standard output (stdout).
