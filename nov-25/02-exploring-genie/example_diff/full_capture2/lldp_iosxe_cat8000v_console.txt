@@ -1,0 +1,40 @@
++++ cat8000v with via 'cli': executing command 'show lldp' +++
+show lldp
+% LLDP is not enabled
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lldp traffic' +++
+show lldp traffic
+% LLDP is not enabled
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lldp entry *' +++
+show lldp entry *
+% LLDP is not enabled
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lldp neighbors detail' +++
+show lldp neighbors detail
+% LLDP is not enabled
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show lldp interface' +++
+show lldp interface
+% LLDP is not enabled
+cat8000v#
+object at 0x10f48ef00>
+Show Command: show lldp entry *
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpNeighborsDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x10f48ef00>
+Show Command: show lldp neighbors detail
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpInterface'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x10f48ef00>
+Show Command: show lldp interface
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Lldp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_lldp.ShowLldp'>                                                                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpTraffic'>                                                                                 |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpEntry'>                                                                                   |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpNeighborsDetail'>                                                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lldp.ShowLldpInterface'>                                                                               |
+|====================================================================================================================================================|

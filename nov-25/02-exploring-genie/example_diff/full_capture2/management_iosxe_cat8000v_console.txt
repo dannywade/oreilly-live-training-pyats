@@ -1,0 +1,31 @@
++++ cat8000v with via 'cli': executing command 'show ip route 0.0.0.0' +++
+show ip route 0.0.0.0
+Routing entry for 0.0.0.0/0, supernet
+  Known via "static", distance 1, metric 0, candidate default path
+  Routing Descriptor Blocks:
+  * 10.10.20.254, via GigabitEthernet1
+      Route metric is 0, traffic share count is 1
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show vrf' +++
+show vrf
+  Name                             Default RD            Protocols   Interfaces
+  Mgmt-vrf                         <not set>             ipv4,ipv6   
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip route vrf Mgmt-vrf summary' +++
+show ip route vrf Mgmt-vrf summary
+IP routing table name is Mgmt-vrf (0x9)
+IP routing table maximum-paths is 32
+Route Source    Networks    Subnets     Replicates  Overhead    Memory (bytes)
+application     0           0           0           0           0
+connected       0           0           0           0           0
+static          0           0           0           0           0
+internal        0                                               40
+Total           0           0           0           0           40
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show ip route vrf Mgmt-vrf 0.0.0.0' +++
+show ip route vrf Mgmt-vrf 0.0.0.0
+
+Routing Table: Mgmt-vrf
+% Network not in table
+cat8000v#

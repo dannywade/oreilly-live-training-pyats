@@ -1,0 +1,34 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "vrf": {
+      "default": {
+        "address_family": {
+          "ipv4": {
+            "routes": {
+              "0.0.0.0/0": {
+                "next_hop": {
+                  "next_hop_list": {
+                    "1": {
+                      "active": true,
+                      "index": 1,
+                      "next_hop": "10.10.20.254",
+                      "outgoing_interface": "GigabitEthernet1",
+                      "preference": 1
+                    }
+                  }
+                },
+                "route": "0.0.0.0/0"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raw_data": false
+}

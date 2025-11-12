@@ -1,0 +1,305 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "bootvar": {
+      "active": {
+        "configuration_register": "0x2102"
+      },
+      "raw_data": {
+        "show bootvar": "BOOT variable does not exist\r\nCONFIG_FILE variable does not exist\r\nBOOTLDR variable does not exist\r\nConfiguration register is 0x2102"
+      }
+    },
+    "config": {
+      "running": "Building configuration...\r\n\r\nCurrent configuration : 5926 bytes\r\n!\r\n! Last configuration change at 00:38:23 UTC Thu Jul 10 2025 by dwade\r\n!\r\nversion 17.9\r\nservice timestamps debug datetime msec\r\nservice timestamps log datetime msec\r\nservice password-encryption\r\nservice call-home\r\nplatform qfp utilization monitor load 80\r\nplatform punt-keepalive disable-kernel-core\r\nplatform console virtual\r\n!\r\nhostname cat8000v\r\n!\r\nboot-start-marker\r\nboot-end-marker\r\n!\r\n!\r\nvrf definition Mgmt-vrf\r\n !\r\n address-family ipv4\r\n exit-address-family\r\n !\r\n address-family ipv6\r\n exit-address-family\r\n!\r\naaa new-model\r\n!\r\n!\r\naaa group server tacacs+ labtac\r\n server name sandboxtacacs\r\n ip tacacs source-interface GigabitEthernet1\r\n!\r\naaa authentication login default group labtac local\r\naaa authentication login netconf-authn group labtac local\r\naaa authorization exec default group labtac local if-authenticated \r\naaa authorization exec netconf-authz group labtac local \r\naaa authorization commands 1 default group labtac local if-authenticated \r\naaa authorization commands 15 default group labtac local if-authenticated \r\n!\r\n!\r\naaa session-id common\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nno ip domain lookup\r\n!\r\n!\r\n!\r\nlogin on-success log\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nsubscriber templating\r\n!\r\nmultilink bundle-name authenticated\r\n!\r\n!\r\n!\r\ncrypto pki trustpoint TP-self-signed-208830145\r\n enrollment selfsigned\r\n subject-name cn=IOS-Self-Signed-Certificate-208830145\r\n revocation-check none\r\n rsakeypair TP-self-signed-208830145\r\n!\r\ncrypto pki trustpoint SLA-TrustPoint\r\n enrollment pkcs12\r\n revocation-check crl\r\n!\r\ncrypto pki trustpoint TP-self-signed-3209586145\r\n enrollment selfsigned\r\n subject-name cn=IOS-Self-Signed-Certificate-3209586145\r\n revocation-check none\r\n rsakeypair TP-self-signed-3209586145\r\n!\r\n!\r\ncrypto pki certificate chain TP-self-signed-208830145\r\n certificate self-signed 08\r\n  3082032E 30820216 A0030201 02020108 300D0609 2A864886 F70D0101 05050030 \r\n  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 \r\n  69666963 6174652D 32303838 33303134 35301E17 0D323530 37303931 36343933 \r\n  335A170D 33353037 30393136 34393333 5A303031 2E302C06 03550403 1325494F \r\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3230 38383330 \r\n  31343530 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 \r\n  82010100 B803892D DB33431C 5062669A 35CC7733 66B2DAA4 9F72E5F8 F2CBCC40 \r\n  B8CE8C9C C2FFF5DC 55B9A2DF 42E19DD3 EC658597 5A48DD3F F69BA6B8 D378C61F \r\n  AC4BC7AE 8E458DAF 4D149CB5 3A7ED29B 67A9A7C8 51CBC37D 66589E12 30912E55 \r\n  00371D22 1B609A6E 52F8F43F 83EC6F53 520D77C0 E74D5A34 967E661D BD992953 \r\n  C5619085 9C52CA9B 948DFA66 D676F709 ED0E6677 0E3EA0BC B8A26867 53D85121 \r\n  95FCAEC2 FB615201 A9C1ABAA A3F93EC1 BEEEC9AE DD1B0432 BE140D2D 77B26E34 \r\n  D7820605 2A59C586 BB107A6D 3D7EFE05 9375AB3B 31766A69 6FC3B0B2 8213B865 \r\n  86103928 3EF59186 C66731FC 55712718 FFB26347 12B2D9F0 84C4F189 5A429781 \r\n  F102F8F7 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F \r\n  0603551D 23041830 1680144C 5FE1C2C8 53E168B8 7D06823E 3A312826 A038F730 \r\n  1D060355 1D0E0416 04144C5F E1C2C853 E168B87D 06823E3A 312826A0 38F7300D \r\n  06092A86 4886F70D 01010505 00038201 01001A0D C5329DD9 0D543F52 AF18D11E \r\n  FB5D05E8 02C857EE 14BDB118 B4B2E2E0 1B54A354 DCBF4685 9F473524 39DA59E2 \r\n  1D5BD95F F70F140B 351EF577 69ABCC69 D04AC4D5 A5454608 9B3FE420 EFE53405 \r\n  5BBD2B78 7D93BC90 A2CA55D7 B12D6D65 8841DB2D 444F8839 F35CB620 65F351BD \r\n  57E2833B B2D2C691 EC3DB9A9 A163A58A 4D951DF6 45A059E5 7E785CAA 3FC5099C \r\n  CB5EF294 AA5985F0 28E5AD2D D9853CB3 A3D7276B 27FFE2F1 8E30E48F B554BE0B \r\n  CF072ABA 30DA74DA 28DD4078 1755B8CC EE8D04D5 C422BAC3 CEC9A457 F896E38B \r\n  170EAED0 69D2016F 78E7150C 4FEA74C8 AEAABCD5 0EBC91CB F8453069 D882D343 \r\n  623A0E1A 9E2136B3 FD00D567 FFEB7011 E163\r\n  \tquit\r\ncrypto pki certificate chain SLA-TrustPoint\r\ncrypto pki certificate chain TP-self-signed-3209586145\r\n!\r\nlicense udi pid C8000V sn 9VNZGF5ZOKE\r\ndiagnostic bootup level minimal\r\nmemory free low-watermark processor 63709\r\n!\r\n!\r\n!\r\nenable password 7 123A540411045D56797F71\r\n!\r\nusername admin privilege 15 secret 9 $9$lgJxy7Ga.Th5FU$gocFhcHC/8pvixGr.s2wB7X59FiGVvwYawfCPrmaJuY\r\nusername jokearns privilege 15 password 7 143443180F0B7B79777C66\r\nusername developer privilege 15 secret 9 $9$F7n4/hvwoCFWhk$rW6yYm7ySPt7BqNlmKlFs1dVNpnI7Tboo30RhKd1uCU\r\n!\r\nredundancy\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\ninterface Loopback55\r\n description Added by Said Hersi b\r\n ip address 192.168.55.1 255.255.255.0\r\n!\r\ninterface Loopback56\r\n description test Devnet\r\n no ip address\r\n!\r\ninterface Loopback57\r\n description test Devnet\r\n no ip address\r\n!\r\ninterface Loopback100\r\n description Added by Said Hersi b\r\n ip address 192.168.100.1 255.255.255.0\r\n!\r\ninterface Loopback123\r\n description Configured by RESTCONF via Python\r\n ip address 192.0.22.1 255.255.255.0\r\n!\r\ninterface Loopback150\r\n ip address 172.16.20.1 255.255.255.0\r\n!\r\ninterface GigabitEthernet1\r\n ip address 10.10.20.148 255.255.255.0\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet2\r\n no ip address\r\n shutdown\r\n negotiation auto\r\n!\r\ninterface GigabitEthernet3\r\n no ip address\r\n shutdown\r\n negotiation auto\r\n!\r\nip forward-protocol nd\r\nip http server\r\nip http authentication local\r\nip http secure-server\r\n!\r\nip route 0.0.0.0 0.0.0.0 GigabitEthernet1 10.10.20.254\r\nip ssh rsa keypair-name ssh-key\r\nip ssh version 2\r\n!\r\n!\r\n!\r\n!\r\ntacacs server sandboxtacacs\r\n address ipv4 10.17.248.43\r\n key 7 12101612110A185C21\r\n!\r\n!\r\n!\r\ncontrol-plane\r\n!\r\nbanner motd ^CC\r\n*** WARNING ***\r\nAuthorized Access Only.\r\nConfigured by Said Hersi b\r\n July 2025\r\n^C\r\n!\r\nline con 0\r\n stopbits 1\r\nline aux 0\r\nline vty 0 4\r\n length 0\r\n transport input ssh\r\n!\r\ncall-home\r\n ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com\r\n ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.\r\n contact-email-addr sch-smart-licensing@cisco.com\r\n profile \"CiscoTAC-1\"\r\n  active\r\n  destination transport-method http\r\nntp server 192.168.100.1\r\n!\r\n!\r\n!\r\n!\r\n!\r\n!\r\nnetconf-yang\r\nrestconf\r\nyang-interfaces aaa authentication method-list netconf-authn\r\nyang-interfaces aaa authorization method-list netconf-authz\r\nend"
+    },
+    "interfaces": {
+      "GigabitEthernet1": {
+        "duplex": "full",
+        "enabled": true,
+        "line_protocol": true,
+        "mac_address": "0050.56bf.280f",
+        "media_type": "Virtual",
+        "mtu": 1500,
+        "speed": "1000",
+        "speed_unit": "Mbps",
+        "status": "up"
+      },
+      "GigabitEthernet2": {
+        "duplex": "full",
+        "enabled": false,
+        "line_protocol": false,
+        "mac_address": "0050.56bf.034d",
+        "media_type": "Virtual",
+        "mtu": 1500,
+        "speed": "1000",
+        "speed_unit": "Mbps",
+        "status": "down"
+      },
+      "GigabitEthernet3": {
+        "duplex": "full",
+        "enabled": false,
+        "line_protocol": false,
+        "mac_address": "0050.56bf.be29",
+        "media_type": "Virtual",
+        "mtu": 1500,
+        "speed": "1000",
+        "speed_unit": "Mbps",
+        "status": "down"
+      },
+      "Loopback100": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "Loopback123": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "Loopback150": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "Loopback55": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "Loopback56": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "Loopback57": {
+        "enabled": true,
+        "line_protocol": true,
+        "mtu": 1514,
+        "status": "up"
+      },
+      "raw_data": {
+        "show interfaces": "GigabitEthernet1 is up, line protocol is up \r\n  Hardware is vNIC, address is 0050.56bf.280f (bia 0050.56bf.280f)\r\n  Internet address is 10.10.20.148/24\r\n  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation ARPA, loopback not set\r\n  Keepalive set (10 sec)\r\n  Full Duplex, 1000Mbps, link type is auto, media type is Virtual\r\n  output flow-control is unsupported, input flow-control is unsupported\r\n  ARP type: ARPA, ARP Timeout 04:00:00\r\n  Last input 00:00:00, output 00:00:00, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/40 (size/max)\r\n  5 minute input rate 8000 bits/sec, 11 packets/sec\r\n  5 minute output rate 25000 bits/sec, 11 packets/sec\r\n     348233 packets input, 41895885 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\r\n     0 watchdog, 0 multicast, 0 pause input\r\n     467711 packets output, 224550286 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 babbles, 0 late collision, 0 deferred\r\n     0 lost carrier, 0 no carrier, 0 pause output\r\n     0 output buffer failures, 0 output buffers swapped out\r\nGigabitEthernet2 is administratively down, line protocol is down \r\n  Hardware is vNIC, address is 0050.56bf.034d (bia 0050.56bf.034d)\r\n  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation ARPA, loopback not set\r\n  Keepalive set (10 sec)\r\n  Full Duplex, 1000Mbps, link type is auto, media type is Virtual\r\n  output flow-control is unsupported, input flow-control is unsupported\r\n  ARP type: ARPA, ARP Timeout 04:00:00\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/40 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     3 packets input, 180 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\r\n     0 watchdog, 0 multicast, 0 pause input\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 babbles, 0 late collision, 0 deferred\r\n     0 lost carrier, 0 no carrier, 0 pause output\r\n     0 output buffer failures, 0 output buffers swapped out\r\nGigabitEthernet3 is administratively down, line protocol is down \r\n  Hardware is vNIC, address is 0050.56bf.be29 (bia 0050.56bf.be29)\r\n  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation ARPA, loopback not set\r\n  Keepalive set (10 sec)\r\n  Full Duplex, 1000Mbps, link type is auto, media type is Virtual\r\n  output flow-control is unsupported, input flow-control is unsupported\r\n  ARP type: ARPA, ARP Timeout 04:00:00\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/375/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/40 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored\r\n     0 watchdog, 0 multicast, 0 pause input\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 babbles, 0 late collision, 0 deferred\r\n     0 lost carrier, 0 no carrier, 0 pause output\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback55 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Description: Added by Said Hersi b\r\n  Internet address is 192.168.55.1/24\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback56 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Description: test Devnet\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback57 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Description: test Devnet\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback100 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Description: Added by Said Hersi b\r\n  Internet address is 192.168.100.1/24\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input 00:00:52, output 00:00:52, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback123 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Description: Configured by RESTCONF via Python\r\n  Internet address is 192.0.22.1/24\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out\r\nLoopback150 is up, line protocol is up \r\n  Hardware is Loopback\r\n  Internet address is 172.16.20.1/24\r\n  MTU 1514 bytes, BW 8000000 Kbit/sec, DLY 5000 usec, \r\n     reliability 255/255, txload 1/255, rxload 1/255\r\n  Encapsulation LOOPBACK, loopback not set\r\n  Keepalive set (10 sec)\r\n  Last input never, output never, output hang never\r\n  Last clearing of \"show interface\" counters never\r\n  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0\r\n  Queueing strategy: fifo\r\n  Output queue: 0/0 (size/max)\r\n  5 minute input rate 0 bits/sec, 0 packets/sec\r\n  5 minute output rate 0 bits/sec, 0 packets/sec\r\n     0 packets input, 0 bytes, 0 no buffer\r\n     Received 0 broadcasts (0 IP multicasts)\r\n     0 runts, 0 giants, 0 throttles \r\n     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored, 0 abort\r\n     0 packets output, 0 bytes, 0 underruns\r\n     Output 0 broadcasts (0 IP multicasts)\r\n     0 output errors, 0 collisions, 0 interface resets\r\n     0 unknown protocol drops\r\n     0 output buffer failures, 0 output buffers swapped out"
+      }
+    },
+    "inventory": {
+      "1": {
+        "description": "QFP 0 of module F0",
+        "name": "qfp F0/0"
+      },
+      "2": {
+        "description": "Cisco Catalyst 8000V Edge Embedded Services Processor",
+        "name": "module F0",
+        "pid": "C8000V"
+      },
+      "3": {
+        "description": "CPU 0 of module R0",
+        "name": "cpu R0/0"
+      },
+      "4": {
+        "description": "Mapped to eth2 on VXE",
+        "name": "GigabitEthernet3"
+      },
+      "5": {
+        "description": "Mapped to eth1 on VXE",
+        "name": "GigabitEthernet2"
+      },
+      "6": {
+        "description": "Mapped to eth0 on VXE",
+        "name": "GigabitEthernet1"
+      },
+      "7": {
+        "description": "Network Management Ethernet",
+        "name": "NME R0"
+      },
+      "8": {
+        "description": "Cisco Catalyst 8000V Edge Route Processor",
+        "name": "module R0",
+        "pid": "C8000V",
+        "sn": "JAB1303001C",
+        "vid": "V00"
+      },
+      "9": {
+        "description": "Cisco Catalyst 8000V Edge Chassis",
+        "name": "Chassis",
+        "pid": "C8000V",
+        "sn": "9VNZGF5ZOKE",
+        "vid": "V00"
+      },
+      "raw_data": {
+        "show inventory raw": "NAME: \"Chassis\", DESCR: \"Cisco Catalyst 8000V Edge Chassis\"\r\nPID: C8000V            , VID: V00  , SN: 9VNZGF5ZOKE\r\n\r\nNAME: \"module R0\", DESCR: \"Cisco Catalyst 8000V Edge Route Processor\"\r\nPID: C8000V            , VID: V00  , SN: JAB1303001C\r\n\r\nNAME: \"NME R0\", DESCR: \"Network Management Ethernet\"\r\nPID:                   , VID:      , SN:            \r\n\r\nNAME: \"GigabitEthernet1\", DESCR: \"Mapped to eth0 on VXE\"\r\nPID:                   , VID:      , SN:            \r\n\r\nNAME: \"GigabitEthernet2\", DESCR: \"Mapped to eth1 on VXE\"\r\nPID:                   , VID:      , SN:            \r\n\r\nNAME: \"GigabitEthernet3\", DESCR: \"Mapped to eth2 on VXE\"\r\nPID:                   , VID:      , SN:            \r\n\r\nNAME: \"cpu R0/0\", DESCR: \"CPU 0 of module R0\"\r\nPID:                   , VID:      , SN:            \r\n\r\nNAME: \"module F0\", DESCR: \"Cisco Catalyst 8000V Edge Embedded Services Processor\"\r\nPID: C8000V            , VID:      , SN:            \r\n\r\nNAME: \"qfp F0/0\", DESCR: \"QFP 0 of module F0\"\r\nPID:                   , VID:      , SN:"
+      }
+    },
+    "mac_table": {
+      "raw_data": {
+        "show mac address-table": "          Mac Address Table\r\n-------------------------------------------\r\n\r\nVlan    Mac Address       Type        Ports\r\n----    -----------       --------    -----\r\n All    0100.0ccc.cccc    STATIC      CPU\r\n All    0100.0ccc.cccd    STATIC      CPU\r\n All    0100.0ccc.ccce    STATIC      CPU\r\n All    0180.c200.0000    STATIC      CPU\r\n All    0180.c200.0001    STATIC      CPU\r\n All    0180.c200.0002    STATIC      CPU\r\n All    0180.c200.0003    STATIC      CPU\r\n All    0180.c200.0004    STATIC      CPU\r\n All    0180.c200.0005    STATIC      CPU\r\n All    0180.c200.0006    STATIC      CPU\r\n All    0180.c200.0007    STATIC      CPU\r\n All    0180.c200.0008    STATIC      CPU\r\n All    0180.c200.0009    STATIC      CPU\r\n All    0180.c200.000a    STATIC      CPU\r\n All    0180.c200.000b    STATIC      CPU\r\n All    0180.c200.000c    STATIC      CPU\r\n All    0180.c200.000d    STATIC      CPU\r\n All    0180.c200.000e    STATIC      CPU\r\n All    0180.c200.000f    STATIC      CPU\r\n All    0180.c200.0010    STATIC      CPU\r\nTotal Mac Addresses for this criterion: 20"
+      },
+      "vlans": {
+        "all": {
+          "mac_addresses": {
+            "0100.0ccc.cccc": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0100.0ccc.cccd": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0100.0ccc.ccce": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0000": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0001": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0002": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0003": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0004": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0005": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0006": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0007": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0008": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0009": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000a": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000b": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000c": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000d": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000e": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.000f": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            },
+            "0180.c200.0010": {
+              "interfaces": {
+                "CPU": {
+                  "type": "static"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "version": {
+      "built_by": "mcpre",
+      "built_date": "2022-11-30T02:47:00",
+      "os": "iosxe",
+      "platform": "",
+      "raw_data": {
+        "show version": "Cisco IOS XE Software, Version 17.09.02a\r\nCisco IOS Software [Cupertino], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.9.2a, RELEASE SOFTWARE (fc4)\r\nTechnical Support: http://www.cisco.com/techsupport\r\nCopyright (c) 1986-2022 by Cisco Systems, Inc.\r\nCompiled Wed 30-Nov-22 02:47 by mcpre\r\n\r\n\r\nCisco IOS-XE software, Copyright (c) 2005-2022 by cisco Systems, Inc.\r\nAll rights reserved.  Certain components of Cisco IOS-XE software are\r\nlicensed under the GNU General Public License (\"GPL\") Version 2.0.  The\r\nsoftware code licensed under GPL Version 2.0 is free software that comes\r\nwith ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such\r\nGPL code under the terms of GPL Version 2.0.  For more details, see the\r\ndocumentation or \"License Notice\" file accompanying the IOS-XE software,\r\nor the applicable URL provided on the flyer accompanying the IOS-XE\r\nsoftware.\r\n\r\n\r\nROM: IOS-XE ROMMON\r\ncat8000v uptime is 21 hours, 4 minutes\r\nUptime for this control processor is 21 hours, 5 minutes\r\nSystem returned to ROM by reload\r\nSystem image file is \"bootflash:packages.conf\"\r\nLast reload reason: reload\r\n\r\n\r\n\r\nThis product contains cryptographic features and is subject to United\r\nStates and local country laws governing import, export, transfer and\r\nuse. Delivery of Cisco cryptographic products does not imply\r\nthird-party authority to import, export, distribute or use encryption.\r\nImporters, exporters, distributors and users are responsible for\r\ncompliance with U.S. and local country laws. By using this product you\r\nagree to comply with applicable laws and regulations. If you are unable\r\nto comply with U.S. and local laws, return this product immediately.\r\n\r\nA summary of U.S. laws governing Cisco cryptographic products may be found at:\r\nhttp://www.cisco.com/wwl/export/crypto/tool/stqrg.html\r\n\r\nIf you require further assistance please contact us by sending email to\r\nexport@cisco.com.\r\n\r\nLicense Level: \r\nLicense Type: Perpetual\r\nNext reload license Level: \r\n\r\nAddon License Level: \r\nAddon License Type: Subscription\r\nNext reload addon license Level: \r\n\r\nThe current throughput level is 20000 kbps \r\n\r\n\r\nSmart Licensing Status: Smart Licensing Using Policy\r\n\r\ncisco C8000V (VXE) processor (revision VXE) with 1979691K/3075K bytes of memory.\r\nProcessor board ID 9VNZGF5ZOKE\r\nRouter operating mode: Autonomous\r\n3 Gigabit Ethernet interfaces\r\n32768K bytes of non-volatile configuration memory.\r\n3964728K bytes of physical memory.\r\n5234688K bytes of virtual hard disk at bootflash:.\r\n\r\nConfiguration register is 0x2102"
+      },
+      "system_image": "bootflash:packages.conf",
+      "version": "17.9.2a"
+    }
+  },
+  "raw_data": true
+}

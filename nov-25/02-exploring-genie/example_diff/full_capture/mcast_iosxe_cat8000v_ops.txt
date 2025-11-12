@@ -1,0 +1,25 @@
+{
+  "_exclude": [
+    "expire",
+    "uptime",
+    "flags",
+    "incoming_interface_list"
+  ],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "vrf": {
+      "default": {
+        "address_family": {
+          "ipv4": {
+            "enable": false,
+            "multipath": false
+          }
+        }
+      }
+    }
+  },
+  "raw_data": false
+}

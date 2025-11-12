@@ -1,0 +1,53 @@
++++ cat8000v with via 'cli': executing command 'show mac address-table aging-time' +++
+show mac address-table aging-time
+Global Aging Time:  300
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show mac address-table learning' +++
+show mac address-table learning
+show mac address-table learning
+                       ^
+% Invalid input detected at '^' marker.
+
+cat8000v#
++++ cat8000v with via 'cli': executing command 'show mac address-table' +++
+show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+ All    0100.0ccc.cccc    STATIC      CPU
+ All    0100.0ccc.cccd    STATIC      CPU
+ All    0100.0ccc.ccce    STATIC      CPU
+ All    0180.c200.0000    STATIC      CPU
+ All    0180.c200.0001    STATIC      CPU
+ All    0180.c200.0002    STATIC      CPU
+ All    0180.c200.0003    STATIC      CPU
+ All    0180.c200.0004    STATIC      CPU
+ All    0180.c200.0005    STATIC      CPU
+ All    0180.c200.0006    STATIC      CPU
+ All    0180.c200.0007    STATIC      CPU
+ All    0180.c200.0008    STATIC      CPU
+ All    0180.c200.0009    STATIC      CPU
+ All    0180.c200.000a    STATIC      CPU
+ All    0180.c200.000b    STATIC      CPU
+ All    0180.c200.000c    STATIC      CPU
+ All    0180.c200.000d    STATIC      CPU
+ All    0180.c200.000e    STATIC      CPU
+ All    0180.c200.000f    STATIC      CPU
+ All    0180.c200.0010    STATIC      CPU
+Total Mac Addresses for this criterion: 20
+cat8000v#
++====================================================================================================================================================+
+| Commands for learning feature 'Fdb'                                                                                                                |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_fdb.ShowMacAddressTableAgingTime'>                                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_fdb.ShowMacAddressTable'>                                                                              |
+|====================================================================================================================================================|
+| - Commands not accepted on the device                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_fdb.ShowMacAddressTableLearning'>                                                                      |
+|====================================================================================================================================================|
