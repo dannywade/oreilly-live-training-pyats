@@ -1,8 +1,8 @@
-# pyATS CLI
+# pyATS and Genie CLI
 
-- `pyats parse {command}`
-- `pyats learn`
-- `pyats diff`
+- `genie parse {command}`
+- `genie learn`
+- `genie diff`
 - `pyats shell`
 
 # Genie CLI

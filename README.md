@@ -22,7 +22,7 @@ Below is a breakdown of each section's exercises included in the live training c
 
 #### [02-exploring-genie](./nov-25/02-exploring-genie/)
 
-- Added exercises for pyATS CLI
+- Added exercises for pyATS and Genie CLI
 - Added Easypy job that uses gRun to execute Blitz
 
 #### [03-cicd-pipelines](./nov-25/03-cicd-pipelines/)
