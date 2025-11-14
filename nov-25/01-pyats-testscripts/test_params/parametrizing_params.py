@@ -38,3 +38,6 @@ class Testcase(aetest.Testcase):
         # test whether expectation is > than generated number
         assert expectation > number
 
+if __name__ == '__main__':
+    aetest.main()
+

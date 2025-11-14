@@ -1,4 +1,5 @@
 from pyats import aetest
+from pprint import pprint
 
 # testscript level default parameters
 parameters = {
@@ -21,9 +22,15 @@ class Testcase(aetest.Testcase):
 
     @aetest.test
     def test(self):
-        # access & print all known parameters
-        print(self.parameters)
-        # {'new_parameter_from_setup': 'new value',
-        #  'generic_param_A': 200,
-        #  'testscript_param_B': [],
-        #  'testscript_param_A': 'some value'}
+        # Print all known parameters
+        print("All known parameters at testcase level:")
+        pprint(self.parameters)
+        # Print parent (testscript) parameters
+        print("Testscript level parameters:")
+        pprint(self.parent.parameters)
+        
+        print(f"generic_param_A at testscript-level: {self.parent.parameters["generic_param_A"]}")  # from testscript level
+        print(f"generic_param_A at testcase-level: {self.parameters["generic_param_A"]}")     # overridden at testcase level
+
+if __name__ == '__main__':
+    aetest.main()

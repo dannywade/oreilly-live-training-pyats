@@ -1,1 +1,1 @@
-python script.py --loglevel INFO --my_arg 1 --your_arg 2
+python testscript_structure.py --loglevel INFO --device_id 3095867 --offline
