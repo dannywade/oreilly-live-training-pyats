@@ -1,0 +1,4 @@
+--- full_capture/config_iosxe_cat8000v_ops.txt
++++ full_capture_loop_chg/config_iosxe_cat8000v_ops.txt
++interface Loopback150:
++ ip address 172.16.20.1 255.255.255.0:

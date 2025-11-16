@@ -1,0 +1,41 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show terminal' +++
+show terminal
+Line 434, Location: "", Type: "xterm-256color"
+Length: 0 lines, Width: 0 columns
+Baud rate (TX/RX) is 9600/9600
+Status: PSI Enabled, Ready, Active, No Exit Banner, Automore On
+  Notify Process
+Capabilities: none
+Modem state: Ready
+Special Chars: Escape  Hold  Stop  Start  Disconnect  Activation
+                ^^x    none   -     -       none         
+Timeouts:      Idle EXEC    Idle Session   Modem Answer  Session   Dispatch
+               00:10:00        never                        none     not set
+                            Idle Session Disconnect Warning
+                              never 
+                            Login-sequence User Response
+                             00:00:30
+                            Autoselect Initial Wait
+                              not set 
+Modem type is unknown.
+Session limit is not set.
+Time since activation: 00:01:53
+Editing is enabled.
+History is enabled, history size is 10.
+DNS resolution in show commands is enabled
+Full user help is disabled
+Allowed input transports are ssh.
+Allowed output transports are pad telnet rlogin ssh.
+Preferred transport is telnet.
+Shell: disabled
+Shell trace: off
+No output characters are padded
+No special data dispatching characters
+Router-1718#
++====================================================================================================================================================+
+| Commands for learning feature 'Terminal'                                                                                                           |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_terminal.ShowTerminal'>                                                                                |
+|====================================================================================================================================================|

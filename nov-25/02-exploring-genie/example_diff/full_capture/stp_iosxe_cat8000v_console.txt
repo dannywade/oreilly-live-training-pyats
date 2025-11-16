@@ -1,9 +1,0 @@
-+++ cat8000v with via 'cli': executing command 'show spanning-tree summary' +++
-show spanning-tree summary
-Switch is in rapid-pvst mode
-Root bridge for: none
-
-Name                   Blocking Listening Learning Forwarding STP Active
----------------------- -------- --------- -------- ---------- ----------
-Total                        0         0        0          0          0
-cat8000v#

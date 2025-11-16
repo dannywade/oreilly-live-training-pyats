@@ -1,0 +1,5 @@
+--- full_capture/terminal_iosxe_cat8000v_ops.txt
++++ full_capture_loop_chg/terminal_iosxe_cat8000v_ops.txt
+ info:
+- line: 434
++ line: 436

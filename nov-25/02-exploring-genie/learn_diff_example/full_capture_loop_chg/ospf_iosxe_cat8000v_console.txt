@@ -1,0 +1,166 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf' +++
+show ip ospf
+ Routing Process "ospf 1" with ID 172.168.120.1
+ Start time: 08:17:23.904, Time elapsed: 1d11h
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Supports Database Exchange Summary List Optimization (RFC 5243)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 50 msecs
+ Minimum hold time between two consecutive SPFs 200 msecs
+ Maximum wait time between two consecutive SPFs 5000 msecs
+ Incremental-SPF disabled
+ Initial LSA throttle delay 50 msecs
+ Minimum hold time for LSA throttle 200 msecs
+ Maximum wait time for LSA throttle 5000 msecs
+ Minimum LSA arrival 100 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ EXCHANGE/LOADING adjacency limit: initial 300, process maximum 300
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0) (Inactive)
+        Number of interfaces in this area is 0
+	Area has no authentication
+	SPF algorithm last executed never ago
+	SPF algorithm executed 0 times
+	Area ranges are
+	Number of LSA 0. Checksum Sum 0x000000
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 0
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip protocols' +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 172.168.120.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    162.18.10.0 0.0.0.255 area 0
+    192.168.120.0 0.0.0.255 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 110)
+
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ network 162.18.10.0 0.0.0.255 area 0
+ network 192.168.120.0 0.0.0.255 area 0
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf mpls ldp interface' +++
+show ip ospf mpls ldp interface
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf mpls traffic-eng link' +++
+show ip ospf mpls traffic-eng link
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+
+  Area 0 MPLS TE not initialized
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ network 162.18.10.0 0.0.0.255 area 0
+ network 192.168.120.0 0.0.0.255 area 0
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf database router' +++
+show ip ospf database router
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf database network' +++
+show ip ospf database network
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf database external' +++
+show ip ospf database external
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf database summary' +++
+show ip ospf database summary
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf database opaque-area' +++
+show ip ospf database opaque-area
+
+            OSPF Router with ID (172.168.120.1) (Process ID 1)
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf virtual-links' +++
+show ip ospf virtual-links
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf interface' +++
+show ip ospf interface
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf neighbor detail' +++
+show ip ospf neighbor detail
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ip ospf sham-links' +++
+show ip ospf sham-links
+Router-1718#
+pf interface 
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfNeighborDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11359aae0>
+Show Command: show ip ospf neighbor detail
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11359aae0>
+Show Command: show ip ospf sham-links
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ospf'                                                                                                               |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspf'>                                                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_protocols.ShowIpProtocols'>, arguments: {'vrf':''}                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsTrafficEngLink'>                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseRouter'>                                                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseNetwork'>                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseExternal'>                                                             |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseSummary'>                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf_database.ShowIpOspfDatabaseOpaqueArea'>                                                           |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsLdpInterface'>, arguments: {'interface':''}                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfVirtualLinks'>                                                                          |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfInterface'>, arguments: {'interface':''}                                                |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfNeighborDetail'>, arguments: {'neighbor':''}                                            |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'>                                                                             |
+|====================================================================================================================================================|

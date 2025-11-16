@@ -1,0 +1,6 @@
+utils is not yet developed for device cat8000v
+
+Traceback (most recent call last):
+  File "src/genie/cli/commands/learn.py", line 315, in genie.cli.commands.learn.LearnCommand._retrieve_ops
+  File "src/genie/ops/utils.py", line 161, in genie.ops.utils.get_ops
+LookupError: Could not find a feature called 'utils' for device Device cat8000v (alias=uut)

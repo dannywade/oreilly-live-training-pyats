@@ -1,0 +1,24 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ntp associations' +++
+show ntp associations
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ntp status' +++
+show ntp status
+%NTP is not enabled.
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show ntp config' +++
+show ntp config
+ Ntp process is not runing
+Router-1718#
+ESingleRpConnection object at 0x11353c170>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpConfig'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11353c170>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ntp'                                                                                                                |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpAssociations'>                                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpStatus'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpConfig'>                                                                                    |
+|====================================================================================================================================================|

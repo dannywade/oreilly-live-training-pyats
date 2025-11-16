@@ -6,7 +6,7 @@ def main():
 
     gRun(
         trigger_datafile="blitz.yml",
-        trigger_uids = ['test1', 'test2'],  # name of the tests you wish to run
+        trigger_uids = ["TestLoopbackInterface"],  # name of the tests you wish to run
         testbed="testbed.yml",
     )
 

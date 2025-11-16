@@ -1,0 +1,81 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show lacp sys-id' +++
+show lacp sys-id
+32768, 001e.499c.0400
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show etherchannel summary' +++
+show etherchannel summary
+Flags:  D - down        P/bndl - bundled in port-channel
+        I - stand-alone s/susp - suspended
+        H - Hot-standby (LACP only)
+        R - Layer3      S - Layer2
+        U - in use      f - failed to allocate aggregator
+
+        M - not in use, minimum links not met
+        u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+
+
+Number of channel-groups in use: 0
+Number of aggregators:           0
+
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+
+RU - L3 port-channel UP State
+SU - L2 port-channel UP state
+P/bndl -  Bundled
+S/susp  - Suspended
+
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show lacp neighbor' +++
+show lacp neighbor
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show pagp neighbor' +++
+show pagp neighbor
+show pagp neighbor
+       ^
+% Invalid input detected at '^' marker.
+
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show pagp internal' +++
+show pagp internal
+show pagp internal
+       ^
+% Invalid input detected at '^' marker.
+
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show lacp counters' +++
+show lacp counters
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show pagp counters' +++
+show pagp counters
+show pagp counters
+       ^
+% Invalid input detected at '^' marker.
+
+Router-1718#
+ject at 0x11359aae0>
+Show Command: show lacp counters
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_lag.ShowPagpCounters'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11359aae0>
+Invalid command has been executed
++====================================================================================================================================================+
+| Commands for learning feature 'Lag'                                                                                                                |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowLacpSysId'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowEtherchannelSummary'>                                                                          |
+|====================================================================================================================================================|
+| - Commands not accepted on the device                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowPagpNeighbor'>                                                                                 |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowPagpInternal'>                                                                                 |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowPagpCounters'>                                                                                 |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowLacpNeighbor'>                                                                                 |
+|   cmd: <class 'genie.libs.parser.iosxe.show_lag.ShowLacpCounters'>                                                                                 |
+|====================================================================================================================================================|

@@ -9,12 +9,13 @@
 
 ## Parse
 
-Parse the "show version" Cisco IOS-XE command output: ```genie parse "show version" "show interfaces" --testbed-file testbed.yml```
+Parse the "show version" Cisco IOS-XE command output: ```uv run genie parse "show version" --learn-hostname --testbed-file testbed.yml```
 
 ### Example Output
 
-```
-  0%|                                                                                                                                           | 0/1 [00:00<?, ?it/s]{
+```json
+0%|                                                                                                                                                                   | 0/1 [00:00<?, ?it/s]
+{
   "version": {
     "chassis": "C8000V",
     "chassis_sn": "9VNZGF5ZOKE",
@@ -28,7 +29,7 @@ Parse the "show version" Cisco IOS-XE command output: ```genie parse "show versi
         "type_of_disk": "virtual hard disk"
       }
     },
-    "hostname": "cat8000v",
+    "hostname": "Router-1718",
     "image_id": "X86_64_LINUX_IOSD-UNIVERSALK9-M",
     "image_type": "production image",
     "label": "RELEASE SOFTWARE (fc4)",
@@ -51,24 +52,25 @@ Parse the "show version" Cisco IOS-XE command output: ```genie parse "show versi
     "router_operating_mode": "Autonomous",
     "rtr_type": "C8000V",
     "system_image": "bootflash:packages.conf",
-    "uptime": "1 day, 17 hours, 46 minutes",
-    "uptime_this_cp": "1 day, 17 hours, 47 minutes",
+    "uptime": "1 day, 19 hours, 11 minutes",
+    "uptime_this_cp": "1 day, 19 hours, 12 minutes",
     "version": "17.9.2a",
     "version_short": "17.9",
     "xe_version": "17.09.02a"
   }
 }
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.07it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.10it/s]
 ```
 
 ### Command
 
-Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces" --testbed-file testbed.yml```
+Parse two Cisco IOS-XE commands: ```uv run genie parse "show version" "show interfaces" --learn-hostname --testbed-file testbed.yml```
 
 ### Example Output
 
-```
+```json
   0%|                                                                                                                                           | 0/2 [00:00<?, ?it/s]{
+{
   "version": {
     "chassis": "C8000V",
     "chassis_sn": "9VNZGF5ZOKE",
@@ -82,7 +84,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
         "type_of_disk": "virtual hard disk"
       }
     },
-    "hostname": "cat8000v",
+    "hostname": "Router-1718",
     "image_id": "X86_64_LINUX_IOSD-UNIVERSALK9-M",
     "image_type": "production image",
     "label": "RELEASE SOFTWARE (fc4)",
@@ -105,14 +107,14 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     "router_operating_mode": "Autonomous",
     "rtr_type": "C8000V",
     "system_image": "bootflash:packages.conf",
-    "uptime": "20 hours, 49 minutes",
-    "uptime_this_cp": "20 hours, 50 minutes",
+    "uptime": "1 day, 19 hours, 13 minutes",
+    "uptime_this_cp": "1 day, 19 hours, 14 minutes",
     "version": "17.9.2a",
     "version_short": "17.9",
     "xe_version": "17.09.02a"
   }
 }
- 50%|█████████████████████████████████████████████████████████████████▌                                                                 | 1/2 [00:00<00:00,  1.06it/s]{
+ 50%|█████████████████████████████████████████████████████████████████████████████▌                                                                             | 1/2 [00:00<00:00,  1.12it/s]{
   "GigabitEthernet1": {
     "arp_timeout": "04:00:00",
     "arp_type": "arpa",
@@ -128,9 +130,9 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "in_mac_pause_frames": 0,
       "in_multicast_pkts": 0,
       "in_no_buffer": 0,
-      "in_octets": 40922498,
+      "in_octets": 166252987,
       "in_overrun": 0,
-      "in_pkts": 338078,
+      "in_pkts": 1315347,
       "in_runts": 0,
       "in_throttles": 0,
       "in_watchdog": 0,
@@ -148,19 +150,20 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "out_mac_pause_frames": 0,
       "out_multicast_pkts": 0,
       "out_no_carrier": 0,
-      "out_octets": 219974800,
-      "out_pkts": 452696,
+      "out_octets": 249605140,
+      "out_pkts": 1440353,
       "out_underruns": 0,
       "out_unknown_protocl_drops": 0,
       "rate": {
-        "in_rate": 10000,
-        "in_rate_pkts": 9,
+        "in_rate": 8000,
+        "in_rate_pkts": 8,
         "load_interval": 300,
-        "out_rate": 15000,
-        "out_rate_pkts": 10
+        "out_rate": 9000,
+        "out_rate_pkts": 7
       }
     },
     "delay": 10,
+    "description": "NETCONF Demo - 2025-11-16 11:48:22",
     "duplex_mode": "full",
     "enabled": true,
     "encapsulations": {
@@ -196,7 +199,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "input_queue_drops": 0,
       "input_queue_flushes": 0,
       "input_queue_max": 375,
-      "input_queue_size": 0,
+      "input_queue_size": 1,
       "output_queue_max": 40,
       "output_queue_size": 0,
       "queue_strategy": "fifo",
@@ -222,9 +225,9 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "in_mac_pause_frames": 0,
       "in_multicast_pkts": 0,
       "in_no_buffer": 0,
-      "in_octets": 180,
+      "in_octets": 14340,
       "in_overrun": 0,
-      "in_pkts": 3,
+      "in_pkts": 239,
       "in_runts": 0,
       "in_throttles": 0,
       "in_watchdog": 0,
@@ -236,14 +239,14 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "out_collision": 0,
       "out_deferred": 0,
       "out_errors": 0,
-      "out_interface_resets": 0,
+      "out_interface_resets": 12,
       "out_late_collision": 0,
-      "out_lost_carrier": 0,
+      "out_lost_carrier": 5,
       "out_mac_pause_frames": 0,
       "out_multicast_pkts": 0,
       "out_no_carrier": 0,
-      "out_octets": 0,
-      "out_pkts": 0,
+      "out_octets": 1260,
+      "out_pkts": 21,
       "out_underruns": 0,
       "out_unknown_protocl_drops": 0,
       "rate": {
@@ -256,24 +259,31 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     },
     "delay": 10,
     "duplex_mode": "full",
-    "enabled": false,
+    "enabled": true,
     "encapsulations": {
-      "encapsulation": "arpa"
+      "encapsulation": "dot1q",
+      "first_dot1q": "1"
     },
     "flow_control": {
       "receive": false,
       "send": false
     },
+    "ipv4": {
+      "172.168.120.1/24": {
+        "ip": "172.168.120.1",
+        "prefix_length": "24"
+      }
+    },
     "is_deleted": false,
     "keepalive": 10,
-    "last_input": "never",
-    "last_output": "never",
-    "line_protocol": "down",
+    "last_input": "12:31:56",
+    "last_output": "18:38:59",
+    "line_protocol": "up",
     "link_type": "auto",
     "mac_address": "0050.56bf.034d",
     "media_type": "Virtual",
     "mtu": 1500,
-    "oper_status": "down",
+    "oper_status": "up",
     "output_hang": "never",
     "phys_address": "0050.56bf.034d",
     "port_channel": {
@@ -295,6 +305,32 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     "txload": "1/255",
     "type": "vNIC"
   },
+  "GigabitEthernet2.100": {
+    "arp_timeout": "04:00:00",
+    "arp_type": "arpa",
+    "bandwidth": 1000000,
+    "delay": 10,
+    "description": "Subinterfaz DEMO VLAN 100",
+    "enabled": true,
+    "encapsulations": {
+      "encapsulation": "dot1q",
+      "first_dot1q": "100"
+    },
+    "is_deleted": false,
+    "keepalive": 10,
+    "line_protocol": "up",
+    "mac_address": "0050.56bf.034d",
+    "mtu": 1500,
+    "oper_status": "up",
+    "phys_address": "0050.56bf.034d",
+    "port_channel": {
+      "port_channel_member": false
+    },
+    "reliability": "255/255",
+    "rxload": "1/255",
+    "txload": "1/255",
+    "type": "vNIC"
+  },
   "GigabitEthernet3": {
     "arp_timeout": "04:00:00",
     "arp_type": "arpa",
@@ -310,9 +346,9 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "in_mac_pause_frames": 0,
       "in_multicast_pkts": 0,
       "in_no_buffer": 0,
-      "in_octets": 0,
+      "in_octets": 1560,
       "in_overrun": 0,
-      "in_pkts": 0,
+      "in_pkts": 26,
       "in_runts": 0,
       "in_throttles": 0,
       "in_watchdog": 0,
@@ -324,9 +360,9 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       "out_collision": 0,
       "out_deferred": 0,
       "out_errors": 0,
-      "out_interface_resets": 0,
+      "out_interface_resets": 4,
       "out_late_collision": 0,
-      "out_lost_carrier": 0,
+      "out_lost_carrier": 2,
       "out_mac_pause_frames": 0,
       "out_multicast_pkts": 0,
       "out_no_carrier": 0,
@@ -354,7 +390,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     },
     "is_deleted": false,
     "keepalive": 10,
-    "last_input": "never",
+    "last_input": "18:38:37",
     "last_output": "never",
     "line_protocol": "down",
     "link_type": "auto",
@@ -383,7 +419,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     "txload": "1/255",
     "type": "vNIC"
   },
-  "Loopback100": {
+  "Loopback200": {
     "bandwidth": 8000000,
     "counters": {
       "in_abort": 0,
@@ -421,301 +457,7 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
       }
     },
     "delay": 5000,
-    "description": "Added by Said Hersi b",
-    "enabled": true,
-    "encapsulations": {
-      "encapsulation": "loopback"
-    },
-    "ipv4": {
-      "192.168.100.1/24": {
-        "ip": "192.168.100.1",
-        "prefix_length": "24"
-      }
-    },
-    "is_deleted": false,
-    "keepalive": 10,
-    "last_input": "00:00:30",
-    "last_output": "00:00:30",
-    "line_protocol": "up",
-    "mtu": 1514,
-    "oper_status": "up",
-    "output_hang": "never",
-    "port_channel": {
-      "port_channel_member": false
-    },
-    "queues": {
-      "input_queue_drops": 0,
-      "input_queue_flushes": 0,
-      "input_queue_max": 75,
-      "input_queue_size": 0,
-      "output_queue_max": 0,
-      "output_queue_size": 0,
-      "queue_strategy": "fifo",
-      "total_output_drop": 0
-    },
-    "reliability": "255/255",
-    "rxload": "1/255",
-    "txload": "1/255",
-    "type": "Loopback"
-  },
-  "Loopback123": {
-    "bandwidth": 8000000,
-    "counters": {
-      "in_abort": 0,
-      "in_broadcast_pkts": 0,
-      "in_crc_errors": 0,
-      "in_errors": 0,
-      "in_frame": 0,
-      "in_giants": 0,
-      "in_ignored": 0,
-      "in_multicast_pkts": 0,
-      "in_no_buffer": 0,
-      "in_octets": 0,
-      "in_overrun": 0,
-      "in_pkts": 0,
-      "in_runts": 0,
-      "in_throttles": 0,
-      "last_clear": "never",
-      "out_broadcast_pkts": 0,
-      "out_buffer_failure": 0,
-      "out_buffers_swapped": 0,
-      "out_collision": 0,
-      "out_errors": 0,
-      "out_interface_resets": 0,
-      "out_multicast_pkts": 0,
-      "out_octets": 0,
-      "out_pkts": 0,
-      "out_underruns": 0,
-      "out_unknown_protocl_drops": 0,
-      "rate": {
-        "in_rate": 0,
-        "in_rate_pkts": 0,
-        "load_interval": 300,
-        "out_rate": 0,
-        "out_rate_pkts": 0
-      }
-    },
-    "delay": 5000,
-    "description": "Configured by RESTCONF via Python",
-    "enabled": true,
-    "encapsulations": {
-      "encapsulation": "loopback"
-    },
-    "ipv4": {
-      "192.0.22.1/24": {
-        "ip": "192.0.22.1",
-        "prefix_length": "24"
-      }
-    },
-    "is_deleted": false,
-    "keepalive": 10,
-    "last_input": "never",
-    "last_output": "never",
-    "line_protocol": "up",
-    "mtu": 1514,
-    "oper_status": "up",
-    "output_hang": "never",
-    "port_channel": {
-      "port_channel_member": false
-    },
-    "queues": {
-      "input_queue_drops": 0,
-      "input_queue_flushes": 0,
-      "input_queue_max": 75,
-      "input_queue_size": 0,
-      "output_queue_max": 0,
-      "output_queue_size": 0,
-      "queue_strategy": "fifo",
-      "total_output_drop": 0
-    },
-    "reliability": "255/255",
-    "rxload": "1/255",
-    "txload": "1/255",
-    "type": "Loopback"
-  },
-  "Loopback55": {
-    "bandwidth": 8000000,
-    "counters": {
-      "in_abort": 0,
-      "in_broadcast_pkts": 0,
-      "in_crc_errors": 0,
-      "in_errors": 0,
-      "in_frame": 0,
-      "in_giants": 0,
-      "in_ignored": 0,
-      "in_multicast_pkts": 0,
-      "in_no_buffer": 0,
-      "in_octets": 0,
-      "in_overrun": 0,
-      "in_pkts": 0,
-      "in_runts": 0,
-      "in_throttles": 0,
-      "last_clear": "never",
-      "out_broadcast_pkts": 0,
-      "out_buffer_failure": 0,
-      "out_buffers_swapped": 0,
-      "out_collision": 0,
-      "out_errors": 0,
-      "out_interface_resets": 0,
-      "out_multicast_pkts": 0,
-      "out_octets": 0,
-      "out_pkts": 0,
-      "out_underruns": 0,
-      "out_unknown_protocl_drops": 0,
-      "rate": {
-        "in_rate": 0,
-        "in_rate_pkts": 0,
-        "load_interval": 300,
-        "out_rate": 0,
-        "out_rate_pkts": 0
-      }
-    },
-    "delay": 5000,
-    "description": "Added by Said Hersi b",
-    "enabled": true,
-    "encapsulations": {
-      "encapsulation": "loopback"
-    },
-    "ipv4": {
-      "192.168.55.1/24": {
-        "ip": "192.168.55.1",
-        "prefix_length": "24"
-      }
-    },
-    "is_deleted": false,
-    "keepalive": 10,
-    "last_input": "never",
-    "last_output": "never",
-    "line_protocol": "up",
-    "mtu": 1514,
-    "oper_status": "up",
-    "output_hang": "never",
-    "port_channel": {
-      "port_channel_member": false
-    },
-    "queues": {
-      "input_queue_drops": 0,
-      "input_queue_flushes": 0,
-      "input_queue_max": 75,
-      "input_queue_size": 0,
-      "output_queue_max": 0,
-      "output_queue_size": 0,
-      "queue_strategy": "fifo",
-      "total_output_drop": 0
-    },
-    "reliability": "255/255",
-    "rxload": "1/255",
-    "txload": "1/255",
-    "type": "Loopback"
-  },
-  "Loopback56": {
-    "bandwidth": 8000000,
-    "counters": {
-      "in_abort": 0,
-      "in_broadcast_pkts": 0,
-      "in_crc_errors": 0,
-      "in_errors": 0,
-      "in_frame": 0,
-      "in_giants": 0,
-      "in_ignored": 0,
-      "in_multicast_pkts": 0,
-      "in_no_buffer": 0,
-      "in_octets": 0,
-      "in_overrun": 0,
-      "in_pkts": 0,
-      "in_runts": 0,
-      "in_throttles": 0,
-      "last_clear": "never",
-      "out_broadcast_pkts": 0,
-      "out_buffer_failure": 0,
-      "out_buffers_swapped": 0,
-      "out_collision": 0,
-      "out_errors": 0,
-      "out_interface_resets": 0,
-      "out_multicast_pkts": 0,
-      "out_octets": 0,
-      "out_pkts": 0,
-      "out_underruns": 0,
-      "out_unknown_protocl_drops": 0,
-      "rate": {
-        "in_rate": 0,
-        "in_rate_pkts": 0,
-        "load_interval": 300,
-        "out_rate": 0,
-        "out_rate_pkts": 0
-      }
-    },
-    "delay": 5000,
-    "description": "test Devnet",
-    "enabled": true,
-    "encapsulations": {
-      "encapsulation": "loopback"
-    },
-    "is_deleted": false,
-    "keepalive": 10,
-    "last_input": "never",
-    "last_output": "never",
-    "line_protocol": "up",
-    "mtu": 1514,
-    "oper_status": "up",
-    "output_hang": "never",
-    "port_channel": {
-      "port_channel_member": false
-    },
-    "queues": {
-      "input_queue_drops": 0,
-      "input_queue_flushes": 0,
-      "input_queue_max": 75,
-      "input_queue_size": 0,
-      "output_queue_max": 0,
-      "output_queue_size": 0,
-      "queue_strategy": "fifo",
-      "total_output_drop": 0
-    },
-    "reliability": "255/255",
-    "rxload": "1/255",
-    "txload": "1/255",
-    "type": "Loopback"
-  },
-  "Loopback57": {
-    "bandwidth": 8000000,
-    "counters": {
-      "in_abort": 0,
-      "in_broadcast_pkts": 0,
-      "in_crc_errors": 0,
-      "in_errors": 0,
-      "in_frame": 0,
-      "in_giants": 0,
-      "in_ignored": 0,
-      "in_multicast_pkts": 0,
-      "in_no_buffer": 0,
-      "in_octets": 0,
-      "in_overrun": 0,
-      "in_pkts": 0,
-      "in_runts": 0,
-      "in_throttles": 0,
-      "last_clear": "never",
-      "out_broadcast_pkts": 0,
-      "out_buffer_failure": 0,
-      "out_buffers_swapped": 0,
-      "out_collision": 0,
-      "out_errors": 0,
-      "out_interface_resets": 0,
-      "out_multicast_pkts": 0,
-      "out_octets": 0,
-      "out_pkts": 0,
-      "out_underruns": 0,
-      "out_unknown_protocl_drops": 0,
-      "rate": {
-        "in_rate": 0,
-        "in_rate_pkts": 0,
-        "load_interval": 300,
-        "out_rate": 0,
-        "out_rate_pkts": 0
-      }
-    },
-    "delay": 5000,
-    "description": "test Devnet",
+    "description": "manual config",
     "enabled": true,
     "encapsulations": {
       "encapsulation": "loopback"
@@ -747,20 +489,20 @@ Parse two Cisco IOS-XE commands: ```genie parse "show version" "show interfaces"
     "type": "Loopback"
   }
 }
-100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.01it/s]
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.10it/s]
 ```
 
 ## Learn
 
 ### Command
 
-Learn all the device features: ```genie learn all --testbed-file testbed.yml --output full_capture```
+Learn all the device features: ```uv run genie learn all --learn-hostname --testbed-file testbed.yml --output full_capture```
 
 ### Example Output
 
 ```
 Learning '['acl', 'arp', 'bgp', 'device', 'dot1x', 'eigrp', 'fdb', 'hsrp', 'igmp', 'interface', 'isis', 'lag', 'lisp', 'lldp', 'management', 'mcast', 'mld', 'msdp', 'nd', 'ntp', 'ospf', 'pim', 'platform', 'prefix_list', 'rip', 'route_policy', 'routing', 'static_routing', 'stp', 'terminal', 'utils', 'vlan', 'vrf', 'vxlan', 'config']' on devices '['cat8000v']'
-100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 35/35 [01:50<00:00,  3.17s/it]
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 35/35 [01:52<00:00,  3.22s/it]
 +==============================================================================+
 | Genie Learn Summary for device cat8000v                                      |
 +==============================================================================+
@@ -915,30 +657,43 @@ Learning '['acl', 'arp', 'bgp', 'device', 'dot1x', 'eigrp', 'fdb', 'hsrp', 'igmp
 
 ### Command
 
-Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --output full_capture_diff```
+
+To demonstrate `genie diff`, make a configuration change on the device and re-learn the device features. The output will be saved to the folder `full_capture_loop_chg/`.
+
+Configuration change:
+```
+interface Loopback150
+ip address 172.16.20.1 255.255.255.0
+```
+
+Re-learn the device features: ```uv run genie learn all --learn-hostname --testbed-file testbed.yml --output full_capture_loop_chg```
+
+Diff two 'genie learn' capture outputs: ```uv run genie diff full_capture full_capture_loop_chg --output full_capture_diff```
 
 ### Example Output
 ```
 +==============================================================================+
-| Genie Diff Summary between directories full_capture/ and full_capture2/      |
+| Genie Diff Summary between directories full_capture/ and                     |
+| full_capture_loop_chg/                                                       |
 +==============================================================================+
 |  File: bgp_iosxe_cat8000v_ops.txt                                            |
 |   - Identical                                                                |
 |------------------------------------------------------------------------------|
 |  File: device_iosxe_cat8000v_ops.txt                                         |
-|   - Diff can be found at ./diff_device_iosxe_cat8000v_ops.txt                |
+|   - Diff can be found at full_capture_diff/diff_device_iosxe_cat8000v_ops.txt |
 |------------------------------------------------------------------------------|
 |  File: mld_iosxe_cat8000v_ops.txt                                            |
 |   - Identical                                                                |
 |------------------------------------------------------------------------------|
 |  File: config_iosxe_cat8000v_ops.txt                                         |
-|   - Diff can be found at ./diff_config_iosxe_cat8000v_ops.txt                |
+|   - Diff can be found at full_capture_diff/diff_config_iosxe_cat8000v_ops.txt |
 |------------------------------------------------------------------------------|
 |  File: vlan_iosxe_cat8000v_ops.txt                                           |
 |   - Identical                                                                |
 |------------------------------------------------------------------------------|
 |  File: routing_iosxe_cat8000v_ops.txt                                        |
-|   - Diff can be found at ./diff_routing_iosxe_cat8000v_ops.txt               |
+|   - Diff can be found at                                                     |
+| full_capture_diff/diff_routing_iosxe_cat8000v_ops.txt                        |
 |------------------------------------------------------------------------------|
 |  File: nd_iosxe_cat8000v_ops.txt                                             |
 |   - Identical                                                                |
@@ -968,7 +723,7 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 |   - Identical                                                                |
 |------------------------------------------------------------------------------|
 |  File: arp_iosxe_cat8000v_ops.txt                                            |
-|   - Diff can be found at ./diff_arp_iosxe_cat8000v_ops.txt                   |
+|   - Diff can be found at full_capture_diff/diff_arp_iosxe_cat8000v_ops.txt   |
 |------------------------------------------------------------------------------|
 |  File: prefix_list_iosxe_cat8000v_ops.txt                                    |
 |   - Identical                                                                |
@@ -995,10 +750,12 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 |   - Identical                                                                |
 |------------------------------------------------------------------------------|
 |  File: terminal_iosxe_cat8000v_ops.txt                                       |
-|   - Diff can be found at ./diff_terminal_iosxe_cat8000v_ops.txt              |
+|   - Diff can be found at                                                     |
+| full_capture_diff/diff_terminal_iosxe_cat8000v_ops.txt                       |
 |------------------------------------------------------------------------------|
 |  File: interface_iosxe_cat8000v_ops.txt                                      |
-|   - Diff can be found at ./diff_interface_iosxe_cat8000v_ops.txt             |
+|   - Diff can be found at                                                     |
+| full_capture_diff/diff_interface_iosxe_cat8000v_ops.txt                      |
 |------------------------------------------------------------------------------|
 |  File: igmp_iosxe_cat8000v_ops.txt                                           |
 |   - Identical                                                                |
@@ -1030,7 +787,7 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 
 ```
 --- full_capture/config_iosxe_cat8000v_ops.txt
-+++ full_capture2/config_iosxe_cat8000v_ops.txt
++++ full_capture_loop_chg/config_iosxe_cat8000v_ops.txt
 +interface Loopback150:
 + ip address 172.16.20.1 255.255.255.0:
 ```
@@ -1039,7 +796,7 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 
 ```
 --- full_capture/interface_iosxe_cat8000v_ops.txt
-+++ full_capture2/interface_iosxe_cat8000v_ops.txt
++++ full_capture_loop_chg/interface_iosxe_cat8000v_ops.txt
  info:
 + Loopback150:
 +  bandwidth: 8000000
@@ -1084,7 +841,7 @@ Diff two 'genie learn' captures: ```genie diff full_capture full_capture2 --outp
 The Blitz YAML file provides a simple example of configuring a loopback interface and verifying it's up. To execute the Blitz YAML file, run the following command:
 
 ```
-pyats run genie --trigger-datafile blitz.yml --trigger-uids 'TestLoopbackInterface' --testbed-file testbed.yml
+uv run pyats run genie --trigger-datafile blitz.yml --trigger-uids 'TestLoopbackInterface' --testbed-file testbed.yml
 ```
 
 You must specify the testcase UID of the tests you want to execute. Fortunately, we only have one testcase in `blitz.yml` (`TestLoopbackInterface`).
@@ -1116,15 +873,15 @@ Here's a quick look at what the test results should look like:
 2025-07-13T02:44:45: %EASYPY-INFO: |   `-- PostProcessor-1                                                   PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: |-- TestLoopbackInterface.uut                                             PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: |   |-- apply_configuration                                               PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1: Starting action configure on device 'Cat8K'           PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1.1: Configuring 'Cat8K'                                 PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1: Starting action configure on device 'cat8000v'        PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |   |   |-- STEP 1.1: Configuring 'cat8000v'                              PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: |   |   `-- STEP 2: Starting action sleep                                 PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: |   `-- verify_configuration                                              PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1: Starting action execute on device 'Cat8K'             PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1: Executing 'show ip interface brief' on 'Cat8K'      PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1.1: Verify that 'Loopback150' is included in th...    PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2: Starting action parse on device 'Cat8K'               PASSED
-2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2.1: Parsing 'show interfaces loopback150' on 'Cat8K'    PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1: Starting action execute on device 'cat8000v'          PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1: Executing 'show ip interface brief' on 'cat8000v'   PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 1.1.1: Verify that 'Loopback100' is included in th...    PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2: Starting action parse on device 'cat8000v'            PASSED
+2025-07-13T02:44:45: %EASYPY-INFO: |       |-- STEP 2.1: Parsing 'show interfaces loopback100' on 'cat8000v' PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: |       `-- STEP 2.1.1: Verify that 'contains_key_value('oper_statu...    PASSED
 2025-07-13T02:44:45: %EASYPY-INFO: `-- common_cleanup                                                        FAILED
 2025-07-13T02:44:45: %EASYPY-INFO:     |-- verify_configuration_snapshot                                     FAILED
@@ -1137,9 +894,9 @@ You'll notice the `common_cleanup` section failed. More specifically, you'll see
 ```
 2025-07-13T02:44:44: %GENIE-INFO:  | Check Post configuration Summary                                                                                                                   |
 2025-07-13T02:44:44: %GENIE-INFO:  +====================================================================================================================================================+
-2025-07-13T02:44:44: %GENIE-INFO:  | * Summary for device: Cat8K                                                                                                                        |
+2025-07-13T02:44:44: %GENIE-INFO:  | * Summary for device: cat8000v                                                                                                                        |
 2025-07-13T02:44:44: %GENIE-ERROR: |     - Comparison between original configuration taken at common setup and the one taken at common cleanup is different as per the following diffs: |
-2025-07-13T02:44:44: %GENIE-ERROR: | +interface Loopback150                                                                                                                             |
+2025-07-13T02:44:44: %GENIE-ERROR: | +interface Loopback100                                                                                                                             |
 2025-07-13T02:44:44: %GENIE-ERROR: | + description Configured by Genie Blitz                                                                                                            |
 2025-07-13T02:44:44: %GENIE-ERROR: | + no ip address                                                                                                                                    |
 2025-07-13T02:44:44: %GENIE-INFO:  |****************************************************************************************************************************************************|

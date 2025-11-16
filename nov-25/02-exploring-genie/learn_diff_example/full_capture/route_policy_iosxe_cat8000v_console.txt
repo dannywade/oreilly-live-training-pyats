@@ -1,0 +1,16 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show route-map all' +++
+show route-map all
+STATIC routemaps
+DYNAMIC routemaps
+Current active dynamic routemaps = 0
+Router-1718#
+Could not learn <class 'genie.libs.parser.iosxe.show_route_map.ShowRouteMapAll'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11353c170>
+Show Command: show route-map all
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'RoutePolicy'                                                                                                        |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_route_map.ShowRouteMapAll'>                                                                            |
+|====================================================================================================================================================|

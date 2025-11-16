@@ -1,0 +1,8 @@
+--- full_capture/arp_iosxe_cat8000v_ops.txt
++++ full_capture_loop_chg/arp_iosxe_cat8000v_ops.txt
+ info:
+  interfaces:
++  Loopback150:
++   arp_dynamic_learning:
++    local_proxy_enable: False
++    proxy_enable: True

@@ -15,24 +15,24 @@ TestLoopbackInterface:
             - configure:
                 device: uut
                 command: |
-                  interface loopback150
+                  interface loopback100
                   description Configured by Genie Blitz
             - sleep:
                 sleep_time: 3
 
         - verify_configuration:
-            # Confirm Loopback150 is configured
+            # Confirm loopback100 is configured
             - execute:
                 device: uut
                 command: show ip interface brief
                 include:
                     # Verify Shutdown is within the show run output
-                  - 'Loopback150'
-            # Validate Loopback150 is up
+                  - 'Loopback100'
+            # Validate Loopback100 is up
             - parse:
                 device: uut
                 # All action supports banner field to add to the log
-                banner: Verify interface loopback150 is up
-                command: show interfaces loopback150
+                banner: Verify interface loopback100 is up
+                command: show interfaces loopback100
                 include:
                   - contains_key_value('oper_status', 'up')

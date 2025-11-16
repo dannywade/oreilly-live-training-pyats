@@ -1,0 +1,18 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show standby all' +++
+show standby all
+Router-1718#
++++ Router-1718(alias=uut) with via 'cli': executing command 'show standby delay' +++
+show standby delay
+Interface          Minimum Reload 
+Router-1718#
+r Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11353c170>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Hsrp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyAll'>                                                                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'>                                                                             |
+|====================================================================================================================================================|

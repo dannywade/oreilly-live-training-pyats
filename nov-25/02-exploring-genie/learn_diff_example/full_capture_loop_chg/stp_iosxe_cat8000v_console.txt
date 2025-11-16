@@ -1,0 +1,9 @@
++++ Router-1718(alias=uut) with via 'cli': executing command 'show spanning-tree summary' +++
+show spanning-tree summary
+Switch is in rapid-pvst mode
+Root bridge for: none
+
+Name                   Blocking Listening Learning Forwarding STP Active
+---------------------- -------- --------- -------- ---------- ----------
+Total                        0         0        0          0          0
+Router-1718#
