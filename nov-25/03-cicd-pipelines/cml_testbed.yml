@@ -1,0 +1,74 @@
+testbed:
+  name: Cat8k OSPF Lab
+devices:
+  terminal_server:
+    os: linux
+    type: server
+    credentials:
+      default:
+        username: '%ENV{CML_USER}'
+        password: '%ENV{CML_PASSWORD}'
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.7.84
+        port: 22
+  cat8k-rt2:
+    os: iosxe
+    type: router
+    platform: csr1000v
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /Cat8k OSPF Lab/cat8k-rt2/0
+  cat8k-rt1:
+    os: iosxe
+    type: router
+    platform: csr1000v
+    credentials:
+      default:
+        username: cisco
+        password: cisco
+    connections:
+      defaults:
+        class: unicon.Unicon
+      a:
+        protocol: telnet
+        proxy: terminal_server
+        command: open /Cat8k OSPF Lab/cat8k-rt1/0
+topology:
+  cat8k-rt2:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet1:
+        link: c46bc033-bb97-4175-9e93-0787bda8ba31
+        type: ethernet
+      GigabitEthernet2:
+        type: ethernet
+      GigabitEthernet3:
+        type: ethernet
+      GigabitEthernet4:
+        link: db17a5aa-ccf8-4d75-ad92-8a0a90acf117
+        type: ethernet
+  cat8k-rt1:
+    interfaces:
+      Loopback0:
+        type: loopback
+      GigabitEthernet1:
+        link: 9fbf51b9-94aa-4396-9bf8-d5b6ecffc847
+        type: ethernet
+      GigabitEthernet2:
+        type: ethernet
+      GigabitEthernet3:
+        type: ethernet
+      GigabitEthernet4:
+        link: fe288fec-e3ab-4417-b6d2-852457d5fdae
+        type: ethernet

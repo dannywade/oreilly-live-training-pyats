@@ -1,0 +1,25 @@
+testbed:
+  # Default credentials for all devices in testbed
+  credentials:
+    default:
+      username: '%ENV{SSH_USER}'
+      password: '%ENV{SSH_PASSWORD}'
+
+# Devices in testbed
+devices:
+  cat8k-rt1:
+    os: iosxe
+    type: router
+    platform: csr1000v
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.7.96
+  cat8k-rt2:
+    os: iosxe
+    type: router
+    platform: csr1000v
+    connections:
+      cli:
+        protocol: ssh
+        ip: 192.168.7.97

@@ -5,6 +5,7 @@ description = "Examples and code for the O'Reilly Live Training course 'Network 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "dotenv>=0.9.9",
     "genie>=25.9",
     "pyats>=25.9",
 ]

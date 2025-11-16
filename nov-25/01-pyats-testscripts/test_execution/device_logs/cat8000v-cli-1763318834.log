@@ -1,27 +1,30 @@
 
-2025-07-12 14:25:10,035: %UNICON-INFO: +++ cat8000v logfile cat8000v-cli-1752344710.log +++
+2025-11-16 13:47:14,547: %UNICON-INFO: +++ cat8000v logfile cat8000v-cli-1763318834.log +++
 
-2025-07-12 14:25:10,036: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.plugins.iosxe) +++
+2025-11-16 13:47:14,548: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.plugins.iosxe) +++
 
 
-2025-07-12 14:25:11,287: %UNICON-INFO: +++ connection to spawn: ssh -l dwade 131.226.217.182, id: 4540078352 +++
+2025-11-16 13:47:15,635: %UNICON-INFO: +++ connection to spawn: ssh -l dwade 131.226.217.182, id: 4606403232 +++
 
-2025-07-12 14:25:11,287: %UNICON-INFO: connection to cat8000v
+2025-11-16 13:47:15,635: %UNICON-INFO: connection to cat8000v
 (dwade@131.226.217.182) Password:
-Cat8K#
 
-2025-07-12 14:25:11,713: %UNICON-INFO: Learned hostname(s): 'Cat8K'.
+Router-1718#
 
-Cat8K#
+2025-11-16 13:47:16,043: %UNICON-INFO: Storing credentials from default as current_credentials
 
-2025-07-12 14:25:12,038: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show version | include operating mode' +++
+2025-11-16 13:47:16,046: %UNICON-INFO: Learned hostname(s): 'Router-1718'.
+
+Router-1718#
+
+2025-11-16 13:47:16,366: %UNICON-INFO: +++ Router-1718(alias=uut) with via 'cli': executing command 'show version | include operating mode' +++
 show version | include operating mode
 Router operating mode: Autonomous
-Cat8K#
+Router-1718#
 
-2025-07-12 14:25:12,626: %UNICON-INFO: +++ initializing handle +++
+2025-11-16 13:47:16,987: %UNICON-INFO: +++ initializing handle +++
 
-2025-07-12 14:25:12,810: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show install summary' +++
+2025-11-16 13:47:17,170: %UNICON-INFO: +++ Router-1718(alias=uut) with via 'cli': executing command 'show install summary' +++
 show install summary
 [ R0 ] Installed Package(s) Information:
 State (St): I - Inactive, U - Activated & Uncommitted,
@@ -36,9 +39,9 @@ Auto abort timer: inactive
 --------------------------------------------------------------------------------
 
 
-Cat8K#
+Router-1718#
 
-2025-07-12 14:25:14,327: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show version' +++
+2025-11-16 13:47:18,736: %UNICON-INFO: +++ Router-1718(alias=uut) with via 'cli': executing command 'show version' +++
 show version
 Cisco IOS XE Software, Version 17.09.02a
 Cisco IOS Software [Cupertino], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.9.2a, RELEASE SOFTWARE (fc4)
@@ -60,8 +63,8 @@ software.
 
 ROM: IOS-XE ROMMON
 
-Cat8K uptime is 14 hours, 56 minutes
-Uptime for this control processor is 14 hours, 57 minutes
+Router-1718 uptime is 1 day, 18 hours, 58 minutes
+Uptime for this control processor is 1 day, 18 hours, 59 minutes
  --More--         System returned to ROM by reload
 System image file is "bootflash:packages.conf"
 Last reload reason: reload
@@ -106,9 +109,9 @@ Router operating mode: Autonomous
 
 Configuration register is 0x2102
 
-Cat8K#
+Router-1718#
 
-2025-07-12 14:25:15,385: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show ip route' +++
+2025-11-16 13:47:19,790: %UNICON-INFO: +++ Router-1718(alias=uut) with via 'cli': executing command 'show ip route' +++
 show ip route
 Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
@@ -126,20 +129,20 @@ Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
 Gateway of last resort is 10.10.20.254 to network 0.0.0.0
 
 S*    0.0.0.0/0 [1/0] via 10.10.20.254, GigabitEthernet1
-      10.0.0.0/8 is variably subnetted, 6 subnets, 3 masks
-C        10.2.1.0/24 is directly connected, Loopback1
-L        10.2.1.1/32 is directly connected, Loopback1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
 C        10.10.20.0/24 is directly connected, GigabitEthernet1
 L        10.10.20.148/32 is directly connected, GigabitEthernet1
-C        10.10.21.0/28 is directly connected, GigabitEthernet2
- --More--         L        10.10.21.1/32 is directly connected, GigabitEthernet2
-Cat8K#
+      172.168.0.0/16 is variably subnetted, 2 subnets, 2 masks
+C        172.168.120.0/24 is directly connected, GigabitEthernet2
+L        172.168.120.1/32 is directly connected, GigabitEthernet2
+Router-1718#
 
-2025-07-12 14:25:16,359: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show ip interface brief' +++
+2025-11-16 13:47:20,660: %UNICON-INFO: +++ Router-1718(alias=uut) with via 'cli': executing command 'show ip interface brief' +++
 show ip interface brief
 Interface              IP-Address      OK? Method Status                Protocol
 GigabitEthernet1       10.10.20.148    YES NVRAM  up                    up      
-GigabitEthernet2       10.10.21.1      YES TFTP   up                    up      
-GigabitEthernet3       unassigned      YES unset  up                    up      
-Loopback1              10.2.1.1        YES other  up                    up      
-Cat8K#
+GigabitEthernet2       172.168.120.1   YES manual up                    up      
+GigabitEthernet2.100   unassigned      YES unset  up                    up      
+GigabitEthernet3       unassigned      YES NVRAM  administratively down down    
+Loopback200            unassigned      YES unset  up                    up      
+Router-1718#

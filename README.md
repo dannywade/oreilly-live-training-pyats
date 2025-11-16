@@ -9,7 +9,7 @@ For all the exercises, we are using the Catalyst 8000 Always-On Sandbox provided
 
 ![DevNet Sandbox environment](imgs/sbx_env.png)
 
-Once you have the connection details and login credentials, be sure to create a `.env` file to ensure they are included in each pyATS testbed file (`testbed.yml`). For convenience, feel free to make a copy of `.env.example` and fill in the values. To load them into your shell, you can use the `load_env_vars.sh` shell script provided or export them individually with the `export` command.
+Once you have the connection details and login credentials, be sure to create a `.env` file to ensure they are included in each pyATS testbed file (`testbed.yml`). For convenience, feel free to make a copy of `.env.example` and fill in the values. To load them into your shell, source from the the `load_env_vars.sh` shell script provided using the following command: `source ./load_env_vars.sh`.
 
 ## Live Training Exercises
 Below is a breakdown of each section's exercises included in the live training course. For more information, checkout the `README` file included in each section directory.
