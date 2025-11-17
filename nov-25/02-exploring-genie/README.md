@@ -844,6 +844,12 @@ The Blitz YAML file provides a simple example of configuring a loopback interfac
 uv run pyats run genie --trigger-datafile blitz.yml --trigger-uids 'TestLoopbackInterface' --testbed-file testbed.yml
 ```
 
+To execute in an Easypy job with health checks:
+
+```
+uv run pyats run job easypy_grun.py --health-checks cpu memory logging core --health-threshold cpu:75 memory:8
+```
+
 You must specify the testcase UID of the tests you want to execute. Fortunately, we only have one testcase in `blitz.yml` (`TestLoopbackInterface`).
 
 ## Blitz Results
