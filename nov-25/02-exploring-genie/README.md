@@ -836,6 +836,31 @@ Diff two 'genie learn' capture outputs: ```uv run genie diff full_capture full_c
 +  type: Loopback
 ```
 
+## pyATS Shell
+
+Confirm the necessary environment variables are set before running the following commands. There's a bash script in the project root directory that can help set them for you.
+
+
+### Initiate the pyATS Shell
+```
+uv run pyats shell --testbed-file testbed.yml
+```
+
+### Querying the Testbed Object
+```
+>>> from pyats.topology.loader import load
+>>> testbed = load('testbed.yml')
+-------------------------------------------------------------------------------            
+>>> 
+>>> 
+>>> testbed.devices
+TopologyDict({'cat8000v': <Device cat8000v (alias=uut) at 0x119494a10>})
+>>> 
+>>> 
+>>> testbed.devices.uut
+<Device cat8000v (alias=uut) at 0x119494a10>
+```
+
 # pyATS Blitz
 
 The Blitz YAML file provides a simple example of configuring a loopback interface and verifying it's up. To execute the Blitz YAML file, run the following command:
