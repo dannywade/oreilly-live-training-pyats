@@ -102,13 +102,13 @@ jobs:
           python-version: '3.12' 
 
       - name: Run pyATS Network Tests
-        run: uv run pyats run job pyats_jobfile.py --health-checks cpu memory logging core --html-logs pyats_html_logs --archive-dir pyats_archive_logs
+        run: uv run pyats run job pyats_jobfile.py --health-checks cpu memory logging core --html-logs /tmp/pyats_html_logs --archive-dir /tmp/pyats_archive_logs
           
       - name: Upload pyATS Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: pyats_test_artifacts
           path: |
-            pyats_html_logs
-            pyats_archive_logs
+            /tmp/pyats_html_logs
+            /tmp/pyats_archive_logs
           retention-days: 30
