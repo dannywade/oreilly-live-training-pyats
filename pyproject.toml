@@ -5,7 +5,11 @@ description = "Examples and code for the O'Reilly Live Training course 'Network 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "ansible>=13.0.0",
+    "ansible-lint>=25.11.0",
     "dotenv>=0.9.9",
     "genie>=25.9",
-    "pyats>=25.9",
+    "genie-telemetry>=25.10",
+    "pyats-robot>=25.9",
+    "pyats[library]>=25.9",
 ]
