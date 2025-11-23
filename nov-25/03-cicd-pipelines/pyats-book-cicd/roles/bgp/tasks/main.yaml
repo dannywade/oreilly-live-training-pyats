@@ -8,14 +8,10 @@
     quiet: true
   loop: "{{ bgp.networks }}"
 
-- name: Render BGP configuration
-  ansible.builtin.set_fact:
-    rendered_config: "{{ lookup('ansible.builtin.template', 'bgp_global.j2') }}"
-
 - name: Print rendered BGP configuration
   ansible.builtin.debug:
-    msg: rendered_config
+    msg: "{{ lookup('ansible.builtin.template', 'bgp_global.j2') }}"
 
 - name: Apply rendered BGP configuration
   cisco.ios.ios_config:
-    src: rendered_config
+    src: bgp_global.j2
