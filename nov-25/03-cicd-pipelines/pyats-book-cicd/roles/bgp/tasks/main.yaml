@@ -10,8 +10,13 @@
 
 - name: Print rendered BGP configuration
   ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.template', 'bgp_global.j2') }}"
+    msg: "{{ lookup('ansible.builtin.template', 'bgp_global.j2').splitlines() }}"
 
-- name: Apply rendered BGP configuration
+# - name: Apply rendered BGP configuration
+#   cisco.ios.ios_config:
+#     src: bgp_global.j2
+
+- name: Configure interfaces using lookup
   cisco.ios.ios_config:
-    src: bgp_global.j2
+    lines: "{{ lookup('ansible.builtin.template', 'bgp_global.j2').splitlines() }}"
+    save_when: modified
