@@ -1,0 +1,35 @@
+testbed:
+    name: Cat8k CICD Lab
+devices:
+    cat8k-rt1:
+        alias: RT1
+        os: iosxe
+        type: router
+        platform: cat8k
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.96
+                port: 22
+    cat8k-rt2:
+        alias: RT2
+        os: iosxe
+        type: router
+        platform: cat8k
+        credentials:
+            default:
+                username: cisco
+                password: cisco
+        connections:
+            defaults:
+                class: unicon.Unicon
+            cli:
+                protocol: ssh
+                ip: 192.168.7.97
+                port: 22

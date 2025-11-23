@@ -1,0 +1,18 @@
+---
+all:
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    ansible_network_os: ios
+    ansible_user: cisco
+    ansible_password: cisco
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_password: cisco
+  hosts:
+  children:
+    cml_routers:
+      hosts:
+        cat8k-rt1:
+          ansible_host: 192.168.7.96
+        cat8k-rt2:
+          ansible_host: 192.168.7.97

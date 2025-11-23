@@ -1,0 +1,114 @@
+name: Network CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  # 1. SETUP JOB: Performs installation and syncing only once
+  setup_env:
+    runs-on: self-hosted # Use your self-hosted runner label
+    defaults:
+      run:
+        working-directory: ./nov-25/03-cicd-pipelines/pyats-book-cicd # <-- All run steps here start in this folder
+
+    steps:
+      - name: Checkout Repository
+        # Code is checked out to the persistent $GITHUB_WORKSPACE
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        # uv binary is installed once and remains on the runner's PATH
+        uses: astral-sh/setup-uv@v6
+        
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12' 
+
+      - name: Sync dependencies
+        # .venv is created in the persistent $GITHUB_WORKSPACE
+        run: uv sync
+
+  # 2. LINT STAGE
+  lint:
+    needs: setup_env
+    runs-on: self-hosted # Must run on the same runner to access the workspace
+    defaults:
+      run:
+        working-directory: ./nov-25/03-cicd-pipelines/pyats-book-cicd
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Reinstall uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: 🔎 Lint YAML/Ansible Files
+        # uv run still works because the .venv is present in the workspace
+        run: |
+          uv run ansible-lint routers.yaml
+          uv run pyats validate datafile net_testing/blitz.yaml
+          uv run pyats validate testbed net_testing/testbed.yaml
+
+  # 3. DEPLOY CONFIG STAGE
+  deploy:
+    needs: lint
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./nov-25/03-cicd-pipelines/pyats-book-cicd
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Reinstall uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12' 
+
+      - name: 🚀 Deploy Configuration
+        run: uv run ansible-playbook routers.yaml
+
+
+  # 4. TEST STAGE
+  test:
+    needs: deploy
+    runs-on: self-hosted
+    defaults:
+      run:
+        working-directory: ./nov-25/03-cicd-pipelines/pyats-book-cicd
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Reinstall uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12' 
+
+      - name: Run pyATS Network Tests
+        run: uv run pyats run job pyats_jobfile.py --health-checks cpu memory logging core --html-logs pyats_html_logs --archive-dir pyats_archive_logs
+          
+      - name: Upload pyATS Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pyats_test_artifacts
+          path: |
+            pyats_html_logs
+            pyats_archive_logs
+          retention-days: 30

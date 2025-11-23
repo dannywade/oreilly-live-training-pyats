@@ -1,0 +1,5 @@
+---
+# Import all routing protocol roles to apply to devices
+- name: BGP routing protocol
+  ansible.builtin.include_role:
+    name: bgp

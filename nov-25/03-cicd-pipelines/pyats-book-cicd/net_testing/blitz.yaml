@@ -1,0 +1,50 @@
+BgpTestcase:
+
+    source:
+        pkg: genie.libs.sdk
+        class: triggers.blitz.blitz.Blitz
+
+    test_sections:
+        - verify_r1_bgp:
+            - learn:
+                device: RT1
+                feature: bgp
+                custom_start_step_message: Learning BGP feature
+                custom_substep_message: Confirm BGP operation
+                save:
+                    - variable_name: r1_bgp_output
+                include:
+                    # Confirm BGP ASN
+                    - contains_key_value("bgp_id", 65000)
+                    # Filter down to only "Established" neighbors (assumes there are some - check will fail otherwise)
+                    - contains_key_value("state", "Established")
+                    # Check that "172.16.1.2" is an established neighbor
+                    - contains_key_value("neighbor", "172.16.1.2")
+
+            - print:
+                custom_start_step_message: Print learned BGP info from R1
+                item:
+                    value: "%VARIABLES{r1_bgp_output.info}"
+
+        - verify_r2_bgp:
+            - learn:
+                device: RT2
+                feature: bgp
+                custom_start_step_message: Learning BGP feature
+                custom_substep_message: Confirm BGP operation
+                save:
+                    - variable_name: r2_bgp_output
+                include:
+                    # Confirm BGP ASN
+                    - contains_key_value("bgp_id", 65001)
+                    # Filter down to only "Established" neighbors (assumes there are some - check will fail otherwise)
+                    - contains_key_value("state", "Established")
+                    # Check that "172.16.1.2" is an established neighbor
+                    - contains_key_value("neighbor", "172.16.1.1")
+
+            - print:
+                custom_start_step_message: Print learned BGP info from R2
+                item:
+                    value: "%VARIABLES{r2_bgp_output.info}"
+
+# pyats run genie --trigger-datafile net_testing/blitz.yaml --trigger-uids RoutingTestcase --testbed-file net_testing/testbed.yaml --health-checks cpu memory logging core
