@@ -8,18 +8,21 @@
 
 ## Installing pyATS and the pyATS Library (Genie)
 
+
+### Via pip
 1. Create and activate a Python virtual environment
 ```
 python -m venv venv
 source venv/bin/activate
 ```
 
-2. Install the pyATS and pyATS Library (Genie) Python packages
+2. Install the project dependencies (requirements.txt)
 ```
-pip install pyats[library]
+pip install -r requirements.txt
 ```
 
-*Note: Depending on the OS shell/terminal, you may need to include quotation marks around the package name due to the square brackets being treated as special characters: ```pip install "pyats[library]"```*
+### Via uv
+Install the packages into the current virtual environment: `uv pip install -r requirements.txt` or sync the environment with `uv sync`.
 
 ## Test Parameters
 
