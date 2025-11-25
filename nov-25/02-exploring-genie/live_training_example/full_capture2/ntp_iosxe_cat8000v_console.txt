@@ -1,0 +1,24 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ntp associations' +++
+show ntp associations
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ntp status' +++
+show ntp status
+%NTP is not enabled.
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ntp config' +++
+show ntp config
+ Ntp process is not runing
+Cat8K#
+nicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpConfig'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ntp'                                                                                                                |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpAssociations'>                                                                              |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpStatus'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ntp.ShowNtpConfig'>                                                                                    |
+|====================================================================================================================================================|

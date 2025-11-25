@@ -1,0 +1,26 @@
+--- full_capture/routing_iosxe_cat8000v_ops.txt
++++ full_capture2/routing_iosxe_cat8000v_ops.txt
+ info:
+  vrf:
+   default:
+    address_family:
+     ipv4:
+      routes:
++      10.100.1.0/24:
++       active: True
++       next_hop:
++        outgoing_interface:
++         Loopback100:
++          outgoing_interface: Loopback100
++       route: 10.100.1.0/24
++       source_protocol: connected
++       source_protocol_codes: C
++      10.100.1.100/32:
++       active: True
++       next_hop:
++        outgoing_interface:
++         Loopback100:
++          outgoing_interface: Loopback100
++       route: 10.100.1.100/32
++       source_protocol: local
++       source_protocol_codes: L

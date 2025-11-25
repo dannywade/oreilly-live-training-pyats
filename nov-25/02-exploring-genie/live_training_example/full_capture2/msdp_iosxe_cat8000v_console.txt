@@ -1,0 +1,18 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip msdp peer' +++
+show ip msdp peer
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip msdp sa-cache' +++
+show ip msdp sa-cache
+MSDP Source-Active Cache - 0 entries
+Cat8K#
+er Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_msdp.ShowIpMsdpSaCache'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Msdp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_msdp.ShowIpMsdpPeer'>                                                                                  |
+|   cmd: <class 'genie.libs.parser.iosxe.show_msdp.ShowIpMsdpSaCache'>                                                                               |
+|====================================================================================================================================================|

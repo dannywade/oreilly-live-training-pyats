@@ -1,0 +1,41 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show vrf detail' +++
+show vrf detail
+VRF Mgmt-vrf (VRF Id = 1); default RD <not set>; default VPNID <not set>
+  New CLI format, supports multiple address-families
+  Flags: 0x1808
+  No interfaces
+Address family ipv4 unicast (Table ID = 0x1):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv6 unicast (Table ID = 0x1E000001):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv4 multicast not active
+Address family ipv6 multicast not active
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip igmp interface' +++
+show ip igmp interface
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip igmp groups detail' +++
+show ip igmp groups detail
+
+Flags: L - Local, U - User, SG - Static Group, VG - Virtual Group,
+       SS - Static Source, VS - Virtual Source,
+       Ac - Group accounted towards access control limit
+Cat8K#
+Could not learn <class 'genie.libs.parser.iosxe.show_igmp.ShowIpIgmpGroupsDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Show Command: show ip igmp groups detail
+Parser Output is empty

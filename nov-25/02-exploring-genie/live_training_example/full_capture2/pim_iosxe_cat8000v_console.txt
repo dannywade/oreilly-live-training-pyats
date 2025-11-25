@@ -1,0 +1,158 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show vrf detail' +++
+show vrf detail
+VRF Mgmt-vrf (VRF Id = 1); default RD <not set>; default VPNID <not set>
+  New CLI format, supports multiple address-families
+  Flags: 0x1808
+  No interfaces
+Address family ipv4 unicast (Table ID = 0x1):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv6 unicast (Table ID = 0x1E000001):
+  Flags: 0x0
+  No Export VPN route-target communities
+  No Import VPN route-target communities
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv4 multicast not active
+Address family ipv6 multicast not active
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip mroute' +++
+show ip mroute
+IP Multicast Routing Table
+Flags: D - Dense, S - Sparse, B - Bidir Group, s - SSM Group, C - Connected,
+       L - Local, P - Pruned, R - RP-bit set, F - Register flag,
+       T - SPT-bit set, J - Join SPT, M - MSDP created entry, E - Extranet,
+       X - Proxy Join Timer Running, A - Candidate for MSDP Advertisement,
+       U - URD, I - Received Source Specific Host Report, 
+       Z - Multicast Tunnel, z - MDT-data group sender, 
+       Y - Joined MDT-data group, y - Sending to MDT-data group, 
+       G - Received BGP C-Mroute, g - Sent BGP C-Mroute, 
+       N - Received BGP Shared-Tree Prune, n - BGP C-Mroute suppressed, 
+       Q - Received BGP S-A Route, q - Sent BGP S-A Route, 
+       V - RD & Vector, v - Vector, p - PIM Joins on route, 
+       x - VxLAN group, c - PFP-SA cache created entry, 
+       * - determined by Assert, # - iif-starg configured on rpf intf, 
+       e - encap-helper tunnel flag, l - LISP decap ref count contributor
+Outgoing interface flags: H - Hardware switched, A - Assert winner, p - PIM Join
+                          t - LISP transit group
+ Timers: Uptime/Expires
+ Interface state: Interface, Next-Hop or VCD, State/Mode
+
+IP Multicast Forwarding is not enabled.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 mroute' +++
+show ipv6 mroute
+No mroute entries found.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim vrf default rp mapping' +++
+show ip pim vrf default rp mapping
+show ip pim vrf default rp mapping
+                ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim vrf default bsr-router' +++
+show ip pim vrf default bsr-router
+show ip pim vrf default bsr-router
+                ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 pim vrf default bsr election' +++
+show ipv6 pim vrf default bsr election
+show ipv6 pim vrf default bsr election
+                  ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 pim vrf default bsr candidate-rp' +++
+show ipv6 pim vrf default bsr candidate-rp
+show ipv6 pim vrf default bsr candidate-rp
+                  ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim vrf default interface df' +++
+show ip pim vrf default interface df
+show ip pim vrf default interface df
+                ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim vrf default interface detail' +++
+show ip pim vrf default interface detail
+show ip pim vrf default interface detail
+                ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim vrf default interface' +++
+show ip pim vrf default interface
+show ip pim vrf default interface
+                ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 pim vrf default interface' +++
+show ipv6 pim vrf default interface
+show ipv6 pim vrf default interface
+                  ^
+% Invalid input detected at '^' marker.
+
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip pim neighbor' +++
+show ip pim neighbor
+PIM Neighbor Table
+Mode: B - Bidir Capable, DR - Designated Router, N - Default DR Priority,
+      P - Proxy Capable, S - State Refresh Capable, G - GenID Capable,
+      L - DR Load-balancing Capable
+Neighbor          Interface                Uptime/Expires    Ver   DR
+Address                                                            Prio/Mode
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 pim neighbor detail' +++
+show ipv6 pim neighbor detail
+No neighbors found.
+
+Cat8K#
+w Command: show ip pim neighbor
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_pim.ShowIpv6PimNeighborDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Show Command: show ipv6 pim neighbor detail
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Pim'                                                                                                                |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_vrf.ShowVrfDetail'>                                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_mcast.ShowIpMroute'>, arguments: {'vrf':''}                                                            |
+|   cmd: <class 'genie.libs.parser.iosxe.show_mcast.ShowIpv6Mroute'>, arguments: {'vrf':''}                                                          |
+|====================================================================================================================================================|
+| - Commands not accepted on the device                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimRpMapping'>, arguments: {'vrf':''}                                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimBsrRouter'>, arguments: {'vrf':''}                                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpv6PimBsrElection'>, arguments: {'vrf':''}                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpv6PimBsrCandidateRp'>, arguments: {'vrf':''}                                                 |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimInterfaceDf'>, arguments: {'vrf':''}                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimInterfaceDetail'>, arguments: {'vrf':''}                                                  |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimInterface'>, arguments: {'vrf':''}                                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpv6PimInterface'>, arguments: {'vrf':''}                                                      |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpPimNeighbor'>, arguments: {'vrf':''}                                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_pim.ShowIpv6PimNeighborDetail'>, arguments: {'vrf':''}                                                 |
+|====================================================================================================================================================|

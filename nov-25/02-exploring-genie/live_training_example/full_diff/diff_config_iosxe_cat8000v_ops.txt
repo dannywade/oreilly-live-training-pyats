@@ -1,0 +1,5 @@
+--- full_capture/config_iosxe_cat8000v_ops.txt
++++ full_capture2/config_iosxe_cat8000v_ops.txt
++interface Loopback100:
++ description For training purposes:
++ ip address 10.100.1.100 255.255.255.0:

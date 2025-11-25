@@ -1,0 +1,120 @@
+
+2025-11-25 15:12:05,627: %UNICON-INFO: +++ cat8000v logfile full_capture2/connection_cat8000v.txt +++
+
+2025-11-25 15:12:05,628: %UNICON-INFO: +++ Unicon plugin iosxe (unicon.plugins.iosxe) +++
+
+
+2025-11-25 15:12:06,662: %UNICON-INFO: +++ connection to spawn: ssh -l dwade 131.226.217.182, id: 4675216416 +++
+
+2025-11-25 15:12:06,662: %UNICON-INFO: connection to cat8000v
+(dwade@131.226.217.182) Password:
+
+Cat8K#
+
+2025-11-25 15:12:07,045: %UNICON-INFO: Storing credentials from default as current_credentials
+
+2025-11-25 15:12:07,046: %UNICON-INFO: Learned hostname(s): 'Cat8K'.
+
+Cat8K#
+
+2025-11-25 15:12:07,342: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show version | include operating mode' +++
+show version | include operating mode
+Router operating mode: Autonomous
+Cat8K#
+
+2025-11-25 15:12:07,906: %UNICON-INFO: +++ initializing handle +++
+
+2025-11-25 15:12:08,077: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'term length 0' +++
+term length 0
+Cat8K#
+
+2025-11-25 15:12:08,698: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'term width 0' +++
+term width 0
+Cat8K#
+
+2025-11-25 15:12:09,329: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show version' +++
+show version
+Cisco IOS XE Software, Version 17.09.02a
+Cisco IOS Software [Cupertino], Virtual XE Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 17.9.2a, RELEASE SOFTWARE (fc4)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2022 by Cisco Systems, Inc.
+Compiled Wed 30-Nov-22 02:47 by mcpre
+
+
+Cisco IOS-XE software, Copyright (c) 2005-2022 by cisco Systems, Inc.
+All rights reserved.  Certain components of Cisco IOS-XE software are
+licensed under the GNU General Public License ("GPL") Version 2.0.  The
+software code licensed under GPL Version 2.0 is free software that comes
+with ABSOLUTELY NO WARRANTY.  You can redistribute and/or modify such
+GPL code under the terms of GPL Version 2.0.  For more details, see the
+documentation or "License Notice" file accompanying the IOS-XE software,
+or the applicable URL provided on the flyer accompanying the IOS-XE
+software.
+
+
+ROM: IOS-XE ROMMON
+
+Cat8K uptime is 51 minutes
+Uptime for this control processor is 52 minutes
+System returned to ROM by reload
+System image file is "bootflash:packages.conf"
+Last reload reason: reload
+
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+License Level: 
+License Type: Perpetual
+Next reload license Level: 
+
+Addon License Level: 
+Addon License Type: Subscription
+Next reload addon license Level: 
+
+The current throughput level is 20000 kbps 
+
+
+Smart Licensing Status: Smart Licensing Using Policy
+
+cisco C8000V (VXE) processor (revision VXE) with 1979691K/3075K bytes of memory.
+Processor board ID 9VNZGF5ZOKE
+Router operating mode: Autonomous
+3 Gigabit Ethernet interfaces
+32768K bytes of non-volatile configuration memory.
+3964728K bytes of physical memory.
+5234688K bytes of virtual hard disk at bootflash:.
+
+Configuration register is 0x2102
+
+Cat8K#
+
+2025-11-25 15:12:09,941: %UNICON-INFO: +++ Cat8K(alias=uut) with via 'cli': executing command 'show install summary' +++
+show install summary
+[ R0 ] Installed Package(s) Information:
+State (St): I - Inactive, U - Activated & Uncommitted,
+            C - Activated & Committed, D - Deactivated & Uncommitted
+--------------------------------------------------------------------------------
+Type  St   Filename/Version
+--------------------------------------------------------------------------------
+IMG   C    17.09.02.0.48
+
+--------------------------------------------------------------------------------
+Auto abort timer: inactive
+--------------------------------------------------------------------------------
+
+
+Cat8K#

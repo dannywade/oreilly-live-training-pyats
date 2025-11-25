@@ -1,0 +1,19 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show standby all' +++
+show standby all
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show standby delay' +++
+show standby delay
+Interface          Minimum Reload 
+Cat8K#
+5b320>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x11155b320>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Hsrp'                                                                                                               |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyAll'>                                                                               |
+|   cmd: <class 'genie.libs.parser.iosxe.show_standby.ShowStandbyDelay'>                                                                             |
+|====================================================================================================================================================|

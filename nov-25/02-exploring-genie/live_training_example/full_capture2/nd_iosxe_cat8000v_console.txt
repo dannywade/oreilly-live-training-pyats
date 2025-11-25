@@ -1,0 +1,18 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 neighbors' +++
+show ipv6 neighbors
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 interface' +++
+show ipv6 interface
+Cat8K#
+ingleRpConnection object at 0x114f09670>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_interface.ShowIpv6Interface'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Nd'                                                                                                                 |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ipv6.ShowIpv6Neighbors'>, arguments: {'interface':'','vrf':''}                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_interface.ShowIpv6Interface'>, arguments: {'interface':''}                                             |
+|====================================================================================================================================================|

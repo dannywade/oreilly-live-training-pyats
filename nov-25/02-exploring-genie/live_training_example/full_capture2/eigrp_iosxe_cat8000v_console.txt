@@ -1,0 +1,18 @@
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ip eigrp neighbors detail' +++
+show ip eigrp neighbors detail
+Cat8K#
++++ Cat8K(alias=uut) with via 'cli': executing command 'show ipv6 eigrp neighbors detail' +++
+show ipv6 eigrp neighbors detail
+Cat8K#
+n object at 0x114f09670>
+Parser Output is empty
+Could not learn <class 'genie.libs.parser.iosxe.show_eigrp.ShowIpv6EigrpNeighborsDetail'> on <unicon.plugins.iosxe.IosXESingleRpConnection object at 0x114f09670>
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Eigrp'                                                                                                              |
++====================================================================================================================================================+
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_eigrp.ShowIpEigrpNeighborsDetail'>                                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_eigrp.ShowIpv6EigrpNeighborsDetail'>                                                                   |
+|====================================================================================================================================================|
